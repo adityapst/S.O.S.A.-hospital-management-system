@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onMousePressed="#handleButtonAction" prefHeight="716.0" prefWidth="979.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Login.LoginController">
+	<children>
+		<Label alignment="CENTER" layoutX="564.0" layoutY="330.0" prefHeight="28.0" prefWidth="154.0" text="Forgot Password" textFill="#5383ff">
+			<font>
+				<Font name="Segoe UI" size="14.0" />
+			</font>
+		</Label>
+		<AnchorPane prefHeight="716.0" prefWidth="464.0" style="-fx-background-color: #0c39ff;">
+			<children>
+				<ImageView fitHeight="100.0" fitWidth="112.0" layoutX="182.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../../Images/hospital.png" />
+					</image>
+				</ImageView>
+				<Label layoutX="65.0" layoutY="280.0" prefHeight="23.0" prefWidth="335.0" text="S.O.S.A. Hospital Management System" textFill="WHITE">
+					<font>
+						<Font name="Segoe UI Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="86.0" layoutY="330.0" prefHeight="28.0" prefWidth="293.0" text="Come Once, never go S.U.S.U. again" textFill="WHITE">
+					<font>
+						<Font name="Segoe UI" size="18.0" />
+					</font>
+				</Label>
+				<Label fx:id="lbl_close" alignment="CENTER" layoutX="5.0" layoutY="5.0" onMousePressed="#handleButtonAction" prefHeight="17.0" prefWidth="17.0" text="X" textFill="WHITE">
+					<font>
+						<Font name="Segoe UI Bold" size="18.0" />
+					</font>
+				</Label>
+			</children>
+		</AnchorPane>
+		<TextField layoutX="564.0" layoutY="180.0" prefHeight="34.0" prefWidth="335.0" promptText="Username or Email ID" />
+		<PasswordField layoutX="564.0" layoutY="253.0" prefHeight="34.0" prefWidth="335.0" promptText="Password" stylesheets="@../Styling/fullpackstyling.css" />
+		<Button layoutX="745.0" layoutY="324.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="154.0" stylesheets="@../../Styling/fullpackstyling.css" text="Sign in" />
+		<Button layoutX="564.0" layoutY="428.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="335.0" text="Sign in with facebook ">
+			<graphic>
+				<ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../../Images/facebook.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<Label layoutX="474.0" layoutY="680.0" prefHeight="28.0" prefWidth="281.0" text="Design by Dr. Soni father of tomar " textFill="#a6b1cc">
+			<font>
+				<Font name="Segoe UI" size="18.0" />
+			</font>
+		</Label>
+		<Label layoutX="811.0" layoutY="680.0" prefHeight="28.0" prefWidth="154.0" text="Download our App" textFill="#a6b1cc">
+			<font>
+				<Font name="Segoe UI" size="18.0" />
+			</font>
+		</Label>
+		<Button layoutX="811.0" layoutY="26.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="154.0" stylesheets="@../../Styling/fullpackstyling.css" text="Sign up" />
+		<ImageView fitHeight="63.0" fitWidth="76.0" layoutX="480.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+			<image>
+				<Image url="@../../Images/login.png" />
+			</image>
+		</ImageView>
+		<Separator layoutX="567.0" layoutY="395.0" prefHeight="10.0" prefWidth="335.0" />
+		<Label alignment="CENTER" layoutX="719.0" layoutY="386.0" prefHeight="28.0" prefWidth="32.0" style="-fx-background-color: #fff;" text="Or" textFill="#424243">
+			<font>
+				<Font name="Segoe UI" size="14.0" />
+			</font>
+		</Label>
+      <Label alignment="CENTER" layoutX="598.0" layoutY="125.0" prefHeight="28.0" prefWidth="274.0" text="Login/Sign up">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+	</children>
+</AnchorPane>
