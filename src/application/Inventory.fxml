@@ -12,9 +12,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="207.0" prefWidth="1006.0" style="-fx-background-color: #2670E3;">
+      <Pane prefHeight="207.0" prefWidth="1006.0" style="-fx-background-color: #1c4443;">
          <children>
-            <Label alignment="CENTER" layoutX="419.0" layoutY="104.0" prefHeight="89.0" prefWidth="169.0" style="-fx-underline: true;" text="Bills">
+            <Label alignment="CENTER" layoutX="419.0" layoutY="104.0" prefHeight="89.0" prefWidth="169.0" style="-fx-underline: true;" text="Bills" textFill="#f2f2f2">
                <font>
                   <Font name="System Bold" size="62.0" />
                </font>
