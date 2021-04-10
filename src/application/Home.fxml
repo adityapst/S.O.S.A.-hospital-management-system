@@ -25,7 +25,7 @@
                   </Label>
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Images/caduceus%20logo.png" />
+                        <Image url="@../Images/caduceus%20logo.png" />
                      </image>
                   </ImageView>
                </children></Pane>
@@ -43,7 +43,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Images/doctor.png" />
+                              <Image url="@../Images/doctor.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -54,11 +54,11 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="209.0" prefWidth="435.0" stylesheets="@style.css" text="Patient" GridPane.columnIndex="1">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="209.0" prefWidth="435.0" text="Patient" GridPane.columnIndex="1">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Images/Patient.png" />
+                              <Image url="@../Images/Patient.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -69,11 +69,11 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="610.0" layoutY="10.0" mnemonicParsing="false" prefHeight="209.0" prefWidth="439.0" stylesheets="@style.css" text="Staff" textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Button contentDisplay="TOP" layoutX="610.0" layoutY="10.0" mnemonicParsing="false" prefHeight="209.0" prefWidth="439.0" text="Staff" textAlignment="CENTER" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Images/admin.png" />
+                              <Image url="@../Images/admin.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -84,11 +84,11 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="610.0" layoutY="218.0" mnemonicParsing="false" prefHeight="209.0" prefWidth="434.0" stylesheets="@style.css" text="Reception" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button contentDisplay="TOP" layoutX="610.0" layoutY="218.0" mnemonicParsing="false" prefHeight="209.0" prefWidth="434.0" text="Reception" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Images/download.png" />
+                              <Image url="@../Images/download.png" />
                            </image>
                         </ImageView>
                      </graphic>
