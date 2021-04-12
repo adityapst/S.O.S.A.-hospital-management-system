@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ExpansionPanel.ExpandedPanel?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="678.0" prefWidth="150.0" style="-fx-background-color: #172333;" />
+      <Pane layoutX="150.0" prefHeight="82.0" prefWidth="858.0" style="-fx-background-color: #4778C5;" />
+      <Pane layoutX="150.0" layoutY="154.0" prefHeight="523.0" prefWidth="252.0" style="-fx-background-color: #4778C5;">
+         <children>
+            <Pane prefHeight="183.0" prefWidth="252.0" style="-fx-background-color: #547FCE;">
+               <children>
+                  <ImageView fitHeight="72.0" fitWidth="75.0" layoutX="102.0" layoutY="54.0">
+                     <image>
+                        <Image url="@../../../../AppData/Local/Temp/icons8_doctor_male_80px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="150.0" layoutY="82.0" prefHeight="72.0" prefWidth="252.0" style="-fx-background-color: #78A8FC;" />
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <Pane layoutX="400.0" layoutY="82.0" prefHeight="595.0" prefWidth="606.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Pane layoutY="72.0" prefHeight="200.0" prefWidth="606.0" />
+            <ExpansionPanel.ExpandedPanel />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="108.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/doctor_male_80px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
