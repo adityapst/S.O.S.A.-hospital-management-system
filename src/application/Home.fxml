@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
    <children>
-      <AnchorPane prefHeight="727.0" prefWidth="984.0" style="-fx-background-color: #FFF;" stylesheets="@style.css" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="727.0" prefWidth="984.0" style="-fx-background-color: #FFF;" AnchorPane.topAnchor="0.0">
          <children>
             <Pane layoutX="-2.0" prefHeight="162.0" prefWidth="1006.0" style="-fx-background-color: #1c4443;">
                <children>
@@ -39,7 +39,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="208.0" prefWidth="436.0" text="Doctors">
+                  <Button fx:id="doc" contentDisplay="TOP" mnemonicParsing="false" onAction="#doc" prefHeight="208.0" prefWidth="436.0" text="Doctors">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -54,7 +54,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="209.0" prefWidth="435.0" text="Patient" GridPane.columnIndex="1">
+                  <Button fx:id="pat" contentDisplay="TOP" mnemonicParsing="false" onAction="#pat" prefHeight="209.0" prefWidth="435.0" text="Patient" GridPane.columnIndex="1">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -69,7 +69,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="610.0" layoutY="10.0" mnemonicParsing="false" prefHeight="209.0" prefWidth="439.0" text="Staff" textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="staff" contentDisplay="TOP" layoutX="610.0" layoutY="10.0" mnemonicParsing="false" onAction="#staff" prefHeight="209.0" prefWidth="439.0" text="Staff" textAlignment="CENTER" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -84,7 +84,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="610.0" layoutY="218.0" mnemonicParsing="false" prefHeight="209.0" prefWidth="434.0" text="Reception" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="rcp" contentDisplay="TOP" layoutX="610.0" layoutY="218.0" mnemonicParsing="false" onAction="#rcp" prefHeight="209.0" prefWidth="434.0" text="Reception" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>

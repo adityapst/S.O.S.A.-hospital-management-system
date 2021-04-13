@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="108.0" layoutY="-3.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-color: #4778C5;" />
       <Pane layoutX="117.0" layoutY="49.0" prefHeight="622.0" prefWidth="275.0" style="-fx-background-color: #4778C5;">
@@ -26,7 +26,7 @@
                            <graphic>
                               <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/user_96px.png" />
+                                    <Image url="@../Images/user_96px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -35,7 +35,7 @@
                            <graphic>
                               <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/important_mail_96px.png" />
+                                    <Image url="@../Images/important_mail_96px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -44,7 +44,7 @@
                            <graphic>
                               <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/phone_96px.png" />
+                                    <Image url="@../Images/phone_96px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -53,7 +53,7 @@
                            <graphic>
                               <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/important_mail_96px.png" />
+                                    <Image url="@../Images/important_mail_96px.png" />
                                  </image>
                               </ImageView>
                            </graphic>

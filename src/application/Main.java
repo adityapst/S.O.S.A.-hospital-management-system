@@ -19,7 +19,7 @@ public class Main extends Application
 	{
 		try 
 		{
-			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
 			
 			//we gonna remove the borderless thingie.  
 	        primaryStage.initStyle(StageStyle.DECORATED);

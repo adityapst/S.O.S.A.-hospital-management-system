@@ -2,48 +2,42 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-import Utils.ConnectionUtil;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class HomeController implements Initializable  {
+public class visit_details_controller implements Initializable {
 	
 	@FXML
-	private Button doc;
+	private Button home;
 	
 	@FXML
-	private Button staff;
+	private Button visith;
 	
 	@FXML
-	private Button pat;
+	private Button medrpt;
 	
 	@FXML
-	private Button rcp;
+	private Button bill;
 	
-	public void doc(ActionEvent event) {
+	@FXML
+	private Button settings;
+	
+	public void home(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -53,14 +47,14 @@ public class HomeController implements Initializable  {
         }
 	}
 	
-	public void staff(ActionEvent event) {
+	public void visith(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details_visit_details.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -70,14 +64,14 @@ public class HomeController implements Initializable  {
         }
 	}
 	
-	public void pat(ActionEvent event) {
+	public void medrpt(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details_med_report.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -87,14 +81,30 @@ public class HomeController implements Initializable  {
         }
 	}
 	
-	public void rcp(ActionEvent event) {
+	public void bill(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details_bills.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+	
+	public void settings(ActionEvent event) {
+		try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -103,17 +113,12 @@ public class HomeController implements Initializable  {
             System.err.println(ex.getMessage());
         }
 	}
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
-	
-	
-	
-	
+
 }
