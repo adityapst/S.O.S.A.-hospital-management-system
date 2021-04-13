@@ -2,21 +2,23 @@
 {
 	-fx-background-image:url("../Images/bgblue4.jpg");
 }
-.formback-bg
-{
-	-fx-background-image:url("../Images/whitebricksbg.jpg");
-}
 
 .inner-bg
 {
-	 /*-fx-background-image: url("../Images/bgblue4.jpg");
-	 -fx-background-repeat: no-repeat;
-     -fx-background-position: center;*/
-	
-	-fx-background-color: rgba(0,51,102, 0.7);
+	 -fx-background-image: url("../Images/whitebricksbg.jpg");
+     /*-fx-background-position: center;*/
+	-fx-background-size: 1100 767    ;
+	-fx-background-color:   #78A8FC;
+	-fx-background-repeat: stretch;
 	-fx-background-radius: 10;
 }
 
+
+.label-tablecol
+{
+	-fx-text-fill: black;
+	-fx-font-size: 14;
+}
 .label
 {
 	-fx-text-fill: white;
@@ -82,7 +84,7 @@
 
 .button-form
 {
-	-fx-background-color: rgba(0, 255, 60, 0.55);
+	-fx-background-color: rgba(0, 255, 60, 0.35);
 	-fx-text-fill: white;
 	-fx-font-size: 14;
 	-fx-cursor: hand;
