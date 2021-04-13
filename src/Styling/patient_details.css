@@ -1,0 +1,86 @@
+.main-bg
+{
+
+}
+
+.inner-bg
+{
+	-fx-background-color: rgba(33, 33, 33, 0.8);
+	-fx-background-radius: 10;
+}
+
+.label
+{
+	-fx-text-fill: white;
+	-fx-font-size: 14;
+}
+.label:hover
+{
+	-fx-text-fill: red;
+	-fx-font-size: 15;
+	-fx-cursor: hand;
+}
+.pane:pressed
+{
+	-fx-background-color:rgb(41,47,80);
+}
+.label-header
+{
+	-fx-text-fill: white;
+	
+	-fx-font-size: 18;
+}
+
+.button-left 
+{
+	-fx-background-color: rgb(23,35,51);
+	-fx-text-fill: white;
+	-fx-font-size: 16;
+	-fx-cursor: hand;
+	-fx-background-radius: 5;
+
+}
+/* .toggle-button {
+  -fx-background-image: url("../Images/user_96px.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}*/
+.button-left:hover
+{
+	-fx-background-color: rgba(255, 255, 255, 0.5);
+	-fx-text-fill: black;
+
+}
+
+.button-left:pressed
+{
+	-fx-background-color: rgb(41,47,80);
+	
+
+}
+
+.button-left-selected
+{
+	-fx-background-color:  #293950;	
+		-fx-text-fill   : white;
+	
+	
+}
+.button-left-selected:hover
+{
+	-fx-background-color: rgba(255, 255, 255, 0.5);
+	-fx-text-fill: black;
+}
+
+.button-form
+{
+	-fx-background-color: rgba(0, 255, 60, 0.35);
+	-fx-text-fill: white;
+	-fx-font-size: 14;
+	-fx-cursor: hand;
+	-fx-background-radius: 5;
+}
+.button-form:hover
+{
+	-fx-background-color: rgba(166, 255, 0, 0.5);
+}
