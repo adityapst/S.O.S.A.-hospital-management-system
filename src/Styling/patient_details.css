@@ -1,11 +1,14 @@
 .main-bg
 {
-
+	-fx-background-image:url("../Images/bgblue4.jpg");
 }
 
 .inner-bg
 {
-	-fx-background-color: rgba(33, 33, 33, 0.8);
+	 /*-fx-background-image: url("../Images/bgblue4.jpg");
+	 -fx-background-repeat: no-repeat;
+     -fx-background-position: center;*/
+	-fx-background-color:   #78A8FC;
 	-fx-background-radius: 10;
 }
 
