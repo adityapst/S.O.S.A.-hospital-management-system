@@ -1,3 +1,7 @@
+/*
+--module-path "C:\Users\Samarth Soni\Desktop\Java Projects\openjfx-16_windows-x64_bin-sdk\javafx-sdk-16\lib"
+--add-modules javafx.controls,javafx.fxml
+*/
 package application;
 	
 import javafx.application.Application;
@@ -52,7 +56,7 @@ public class Main extends Application
 	            }
 	        });
 			
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,1000,716);
 //			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
