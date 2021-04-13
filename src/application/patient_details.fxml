@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.patient_details_controller">
+   <children>
+      <Pane layoutX="108.0" layoutY="-3.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-color: #4778C5;" />
+      <Pane layoutX="117.0" layoutY="49.0" prefHeight="622.0" prefWidth="275.0" style="-fx-background-color: #4778C5;">
+         <children>
+            <Pane prefHeight="65.0" prefWidth="275.0" style="-fx-background-color: #78A8FC;" />
+            <Pane layoutY="65.0" prefHeight="178.0" prefWidth="275.0" style="-fx-background-color: #547FCE;">
+               <children>
+                  <Separator layoutX="38.0" layoutY="75.0" prefWidth="200.0" />
+                  <HBox layoutX="4.0" layoutY="10.0" prefHeight="65.0" prefWidth="263.0" style="-fx-background-color: #547FCE;">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="80.0" style="-fx-background-image: C:\Users\adity\eclipse-workspace\DBMS-Project\src\Images\user_96px; -fx-background-color: #547FCE;">
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/user_96px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="80.0" style="-fx-background-image: C:\Users\adity\eclipse-workspace\DBMS-Project\src\Images\important_mail_96px; -fx-background-color: #547FCE;">
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/important_mail_96px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="80.0" style="-fx-background-image: C:\Users\adity\eclipse-workspace\DBMS-Project\src\Images\user_96px; -fx-background-color: #547FCE;">
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/phone_96px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="59.0" style="-fx-background-image: C:\Users\adity\eclipse-workspace\DBMS-Project\src\Images\user_96px; -fx-background-color: #547FCE;">
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/important_mail_96px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Label layoutX="109.0" layoutY="386.0" text="04">
+               <font>
+                  <Font name="Segoe UI" size="52.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="250.0" text="12th March" textAlignment="CENTER" textFill="#242525">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="198.0" layoutY="250.0" text="April 2021" textAlignment="CENTER" textFill="#242525">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="385.0" layoutY="49.0" prefHeight="622.0" prefWidth="622.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Pane layoutY="65.0" prefHeight="200.0" prefWidth="622.0" style="-fx-background-color: #F7F7F7;" />
+         </children>
+      </Pane>
+      <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
+         <children>
+            <AnchorPane prefHeight="87.0" prefWidth="118.0" />
+            <Pane prefHeight="51.0" prefWidth="118.0" style="-fx-background-color: #293950;">
+               <children>
+                  <Pane layoutX="-2.0" prefHeight="51.0" prefWidth="5.0" style="-fx-background-color: #F0F0F0;" />
+                  <Button fx:id="home" alignment="CENTER" layoutX="7.0" mnemonicParsing="false" onAction="#home" prefHeight="51.0" prefWidth="111.0" styleClass="button-left-selected" stylesheets="@../Styling/patient_details.css" text="Home">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Button fx:id="visith" alignment="CENTER" mnemonicParsing="false" onAction="#visith" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Visit History" translateY="-1.0">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="medrpt" alignment="CENTER" mnemonicParsing="false" onAction="#medrpt" prefHeight="51.0" prefWidth="119.0" styleClass="button-left" text="Med Reports" translateY="-1.0" wrapText="true">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="bill" alignment="CENTER" mnemonicParsing="false" onAction="#bill" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Bills" translateY="-1.0">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="settings" alignment="CENTER" mnemonicParsing="false" onAction="#settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings" translateY="-1.0">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

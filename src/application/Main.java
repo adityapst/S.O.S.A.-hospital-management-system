@@ -14,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.StageStyle;
 
+
 /**
 *
 * @author Sammy Diesel
@@ -24,13 +25,14 @@ public class Main extends Application
 	//define your offsets here
     private double xOffset = 0;
     private double yOffset = 0;
-    
+ 
     
 	@Override
 	public void start(Stage primaryStage) throws Exception
 	{
 		try 
 		{
+
 			Parent root = FXMLLoader.load(getClass().getResource("Login/Login.fxml"));
 			
 			//we gonna remove the borderless thingie.  
@@ -58,8 +60,15 @@ public class Main extends Application
 			
 			Scene scene = new Scene(root,1000,716);
 //			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+
+//			Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+//			
+//			//we gonna remove the borderless thingie.  
+//	        primaryStage.initStyle(StageStyle.DECORATED);
+//			Scene scene = new Scene(root,900,716);
+//
+//			primaryStage.setScene(scene);
+//			primaryStage.show();
 		} 
 		
 		catch(Exception e) 
@@ -68,10 +77,10 @@ public class Main extends Application
 		}
 	}
 	
+
 	/**
      * @param args the command line arguments
      */
-	
 	public static void main(String[] args) 
 	{
 		launch(args);
