@@ -48,18 +48,18 @@
       </VBox>
       <AnchorPane layoutX="118.0" layoutY="47.0" prefHeight="629.0" prefWidth="890.0" styleClass="inner-bg" stylesheets="@../Styling/patient_details.css">
          <children>
-            <TableView layoutX="67.0" layoutY="84.0" prefHeight="506.0" prefWidth="756.0">
+            <TableView fx:id="Med_Report" layoutX="28.0" layoutY="69.0" prefHeight="521.0" prefWidth="795.0">
                <columns>
-                  <TableColumn prefWidth="107.19999694824219" text="Report_No" />
-                  <TableColumn prefWidth="75.2000732421875" text="Staff_ID" />
-                  <TableColumn prefWidth="183.20001220703125" text="Disease Diagnosed" />
-                  <TableColumn prefWidth="38.4000244140625" text="BP" />
-                  <TableColumn prefWidth="131.99993896484375" text="Temperature" />
-                  <TableColumn prefWidth="101.5999755859375" text="Weight" />
-                  <TableColumn prefWidth="118.4000244140625" text="Pulse" />
+                  <TableColumn fx:id="report_no" prefWidth="107.19999694824219" text="Report_No" />
+                  <TableColumn fx:id="staff_id" prefWidth="75.2000732421875" text="Staff_ID" />
+                  <TableColumn fx:id="dis_diag" prefWidth="183.20001220703125" text="Disease Diagnosed" />
+                  <TableColumn fx:id="BP" prefWidth="104.800048828125" text="BP" />
+                  <TableColumn fx:id="temp" prefWidth="98.39996337890625" text="Temperature" />
+                  <TableColumn fx:id="weight" prefWidth="98.39990234375" text="Weight" />
+                  <TableColumn fx:id="pulse" prefWidth="124.8000366210938" text="Pulse" />
                </columns>
             </TableView>
-            <Label alignment="CENTER" layoutX="347.0" layoutY="40.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Medical Report">
+            <Label alignment="CENTER" layoutX="347.0" layoutY="26.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Medical Report">
                <font>
                   <Font size="20.0" />
                </font>
