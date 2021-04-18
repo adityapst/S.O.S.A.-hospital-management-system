@@ -30,6 +30,13 @@ public class patient_details_controller implements Initializable {
 	@FXML
 	private Button settings;
 	
+	public String userId,Phone_No;
+	
+	public void showInfo(String name,String Phone) {
+		userId=name;
+		Phone_No=Phone;
+	}
+	
 	public void home(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)

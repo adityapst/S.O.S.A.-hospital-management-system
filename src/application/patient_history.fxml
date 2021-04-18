@@ -25,16 +25,16 @@
          <children>
             <Pane layoutX="14.0" layoutY="311.0" prefHeight="37.0" prefWidth="213.0" />
             <Pane layoutX="28.0" layoutY="22.0" prefHeight="37.0" prefWidth="213.0" />
-            <AnchorPane layoutX="-7.0" layoutY="-5.0" prefHeight="624.0" prefWidth="886.0" styleClass="inner-bg" stylesheets="@../Styling/patient_details.css">
+            <AnchorPane layoutX="-9.0" layoutY="-6.0" prefHeight="629.0" prefWidth="891.0" styleClass="inner-bg" stylesheets="@../Styling/patient_details.css">
                <children>
                   <TableView layoutX="46.0" layoutY="82.0" prefHeight="200.0" prefWidth="756.0">
                      <columns>
                         <TableColumn prefWidth="75.0" text="P_Id" />
                         <TableColumn prefWidth="92.80000305175781" text="In_Date" />
+                        <TableColumn prefWidth="80.79998779296875" text="Out_Date" />
+                        <TableColumn prefWidth="79.199951171875" text="Room_No" />
                         <TableColumn prefWidth="79.199951171875" text="Report_No" />
                         <TableColumn prefWidth="64.79998779296875" text="Bill_No" />
-                        <TableColumn prefWidth="79.199951171875" text="Room_No" />
-                        <TableColumn prefWidth="80.79998779296875" text="Out_Date" />
                         <TableColumn prefWidth="92.79998779296875" text="Treatment" />
                         <TableColumn prefWidth="89.5999755859375" text="Prescription" />
                         <TableColumn prefWidth="99.99993896484375" text="Adv_Payment" />
@@ -44,10 +44,10 @@
                      <columns>
                         <TableColumn prefWidth="75.0" text="P_Id" />
                         <TableColumn prefWidth="92.80000305175781" text="In_Date" />
-                        <TableColumn prefWidth="79.199951171875" text="Report_No" />
-                        <TableColumn prefWidth="64.79998779296875" text="Bill_No" />
-                        <TableColumn prefWidth="92.79998779296875" text="Treatment" />
-                        <TableColumn prefWidth="89.5999755859375" text="Prescription" />
+                        <TableColumn prefWidth="163.199951171875" text="Report_No" />
+                        <TableColumn prefWidth="103.20001220703125" text="Bill_No" />
+                        <TableColumn prefWidth="147.19989013671875" text="Treatment" />
+                        <TableColumn prefWidth="173.60003662109375" text="Prescription" />
                      </columns>
                   </TableView>
                   <Separator layoutX="74.0" layoutY="322.0" prefHeight="5.0" prefWidth="727.0" />
