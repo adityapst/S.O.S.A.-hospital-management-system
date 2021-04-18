@@ -132,18 +132,19 @@ public class visit_details_controller implements Initializable {
              
              while (resultSet.next()){
             	 boolean add=Patient_In_list.add(new  Patient_In(
-                         resultSet.getInt("pid"),
-                         resultSet.getDate("in_date"),
-                         resultSet.getDate("out_date"),
-                         resultSet.getInt("room_no"),
-                         resultSet.getInt("report_no"),
-                         resultSet.getInt("bill_no"),
-                         resultSet.getString("treatment"),
-                         resultSet.getString("presc"),
-                         resultSet.getInt("adv_pay")));
-            	 Pateint_In_Details.setItems(Patient_In_list);
+            			 resultSet.getInt("PID"),
+                       resultSet.getDate("IN_DATE"),
+                       resultSet.getInt("REPORT_NO"),
+                       resultSet.getInt("BILL_NO"),
+                       resultSet.getInt("ROOM_NO"),
+                       resultSet.getDate("OUT_DATE"),
+                       resultSet.getString("TREAT"),
+                       resultSet.getString("PRESC"),
+                       resultSet.getInt("ADV_PAY")));
+            	 
                  
              }
+             Pateint_In_Details.setItems(Patient_In_list);
              
              
          } catch (SQLException ex) {
@@ -152,10 +153,10 @@ public class visit_details_controller implements Initializable {
          }
     	 pid.setCellValueFactory(new PropertyValueFactory<>("pid"));
     	 in_date.setCellValueFactory(new PropertyValueFactory<>("in_date"));
-    	 out_date.setCellValueFactory(new PropertyValueFactory<>("out_date"));
-    	 room_no.setCellValueFactory(new PropertyValueFactory<>("room_no"));
     	 report_no.setCellValueFactory(new PropertyValueFactory<>("report_no"));
     	 bill_no.setCellValueFactory(new PropertyValueFactory<>("bill_no"));
+    	 room_no.setCellValueFactory(new PropertyValueFactory<>("room_no"));
+    	 out_date.setCellValueFactory(new PropertyValueFactory<>("out_date"));
     	 treatment.setCellValueFactory(new PropertyValueFactory<>("treatment"));
     	 presc.setCellValueFactory(new PropertyValueFactory<>("presc"));
     	 adv_pay.setCellValueFactory(new PropertyValueFactory<>("adv_pay"));
@@ -172,27 +173,28 @@ public class visit_details_controller implements Initializable {
              
              while (resultSet.next()){
             	 boolean add=Patient_Out_list.add(new  Patient_Out(
-                         resultSet.getInt("pid_op"),
-                         resultSet.getDate("in_date_op"),
-                         resultSet.getInt("report_no_op"),
-                         resultSet.getInt("bill_no_op"),
-                         resultSet.getString("treatment_op"),
-                         resultSet.getString("presc_op")));
-            	 Pateint_Out_Details.setItems(Patient_Out_list);
+                         resultSet.getInt("PID"),
+                         resultSet.getDate("IN_DATE"),
+                         resultSet.getInt("REPORT_NO"),
+                         resultSet.getInt("BILL_NO"),
+                         resultSet.getString("TREAT"),
+                         resultSet.getString("PRESC")));
+            	 
                  
              }
+             Pateint_Out_Details.setItems(Patient_Out_list);
              
              
          } catch (SQLException ex) {
         	 System.out.println("Error");
 //             Logger.getLogger(med_report_controller.class.getName()).log(Level.SEVERE, null, ex);
          }
-    	 pid_op.setCellValueFactory(new PropertyValueFactory<>("pid_op"));
-    	 in_date_op.setCellValueFactory(new PropertyValueFactory<>("in_date_op"));
-    	 report_no_op.setCellValueFactory(new PropertyValueFactory<>("report_no_op"));
-    	 bill_no_op.setCellValueFactory(new PropertyValueFactory<>("bill_no_op"));
-    	 treatment_op.setCellValueFactory(new PropertyValueFactory<>("treatment_op"));
-    	 presc_op.setCellValueFactory(new PropertyValueFactory<>("presc_op"));
+    	 pid_op.setCellValueFactory(new PropertyValueFactory<>("pid"));
+    	 in_date_op.setCellValueFactory(new PropertyValueFactory<>("in_date"));
+    	 report_no_op.setCellValueFactory(new PropertyValueFactory<>("report_no"));
+    	 bill_no_op.setCellValueFactory(new PropertyValueFactory<>("bill_no"));
+    	 treatment_op.setCellValueFactory(new PropertyValueFactory<>("treatment"));
+    	 presc_op.setCellValueFactory(new PropertyValueFactory<>("presc"));
     }
 	
 	public void home(ActionEvent event) {
@@ -219,7 +221,7 @@ public class visit_details_controller implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details_visit_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_visit_details.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -236,7 +238,7 @@ public class visit_details_controller implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details_med_report.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_med_report.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -253,7 +255,7 @@ public class visit_details_controller implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details_bills.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_bills.fxml")));
             stage.setScene(scene);
             stage.show();
         } 

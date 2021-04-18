@@ -43,16 +43,16 @@ public class patient_bills_controller implements Initializable {
 	private TableView<Bills> Bill_Report;
 	
 	@FXML
-	private TableColumn<Bills,String>Bill_No;
+	private TableColumn<Bills,String>BILL_NO;
 	
 	@FXML
-	private TableColumn<Bills,String>Room_Charge;
+	private TableColumn<Bills,String>ROOM_CHARGE;
 	
 	@FXML
-	private TableColumn<Bills,String>Treatment_Charge;
+	private TableColumn<Bills,String>TREAT_CHARGE;
 	
 	@FXML
-	private TableColumn<Bills,String>Medicine_Charge;
+	private TableColumn<Bills,String>MED_CHARGE;
 	
 	@FXML
 	private TableColumn<Bills,String>Net_Amount;
@@ -88,26 +88,25 @@ public class patient_bills_controller implements Initializable {
              resultSet = preparedStatement.executeQuery();
              
              while (resultSet.next()){
-            	 boolean add=bills_list.add(new  Bills(
-                         resultSet.getInt("Bill_No"),
-                         resultSet.getInt("Room_Charge"),
-                         resultSet.getInt("Treatment_Charge"),
-                         resultSet.getInt("Medicine_Charge"),
-                         resultSet.getInt("Net_Amount")));
+            	 int billno=resultSet.getInt("BILL_NO");
+            	 int roomcharge=resultSet.getInt("ROOM_CHARGE");
+            	 int treatmentCharge=resultSet.getInt("TREAT_CHARGE");
+            	 int medicineCharge=resultSet.getInt("MED_CHARGE");
+            	 int net=medicineCharge+treatmentCharge+roomcharge;
+            	 
+            	 boolean add=bills_list.add(new  Bills(billno,roomcharge,treatmentCharge,medicineCharge,net));
             	 Bill_Report.setItems(bills_list);
-                 
              }
-             
-             
+                        
          } catch (SQLException ex) {
         	 System.out.println("Error");
 //             Logger.getLogger(med_report_controller.class.getName()).log(Level.SEVERE, null, ex);
          }
-    	 Bill_No.setCellValueFactory(new PropertyValueFactory<>("Bill_No"));
-    	 Room_Charge.setCellValueFactory(new PropertyValueFactory<>("Room_Charge"));
-    	 Treatment_Charge.setCellValueFactory(new PropertyValueFactory<>("Treatment_Charge"));
-    	 Medicine_Charge.setCellValueFactory(new PropertyValueFactory<>("Medicine_Charge"));
-    	 Net_Amount.setCellValueFactory(new PropertyValueFactory<>("Net_Amount"));
+    	 BILL_NO.setCellValueFactory(new PropertyValueFactory<Bills,String>("bill_no"));
+    	 ROOM_CHARGE.setCellValueFactory(new PropertyValueFactory<Bills,String>("room_charge"));
+    	 TREAT_CHARGE.setCellValueFactory(new PropertyValueFactory<Bills,String>("treatment_charge"));
+    	 MED_CHARGE.setCellValueFactory(new PropertyValueFactory<Bills,String>("medicinal_charge"));
+    	 Net_Amount.setCellValueFactory(new PropertyValueFactory<Bills,String>("net_amount"));
     }
 
     
