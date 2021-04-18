@@ -77,11 +77,11 @@
                <columns>
                   <TableColumn prefWidth="99.99998474121094" text="Room_Number" />
                   <TableColumn prefWidth="265.60003662109375" text="Room_Type" />
-                  <TableColumn prefWidth="248.79998779296875" text="Charge" />
-                  <TableColumn prefWidth="142.4000244140625" text="Max_Occ" />
+                  <TableColumn prefWidth="133.5999755859375" text="Charge" />
+                  <TableColumn prefWidth="258.4000244140625" text="Max_Occ" />
                </columns>
             </TableView>
-            <Label alignment="CENTER" layoutX="348.0" layoutY="48.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Rooms">
+            <Label alignment="CENTER" layoutX="349.0" layoutY="31.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Rooms">
                <font>
                   <Font size="20.0" />
                </font>
