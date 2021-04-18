@@ -19,11 +19,16 @@
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Staff" translateY="-1.0">
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font>
-            </Button>
+            <Pane prefHeight="51.0" prefWidth="118.0" style="-fx-background-color: #293950;">
+               <children>
+                  <Pane layoutX="-2.0" prefHeight="51.0" prefWidth="5.0" style="-fx-background-color: #F0F0F0;" />
+                  <Button alignment="CENTER" layoutX="6.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="112.0" styleClass="button-left-selected" text="Staff">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
             <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Patient History" textAlignment="CENTER" translateY="-1.0" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="15.9" />
@@ -55,16 +60,6 @@
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Pane prefHeight="51.0" prefWidth="118.0" style="-fx-background-color: #293950;">
-               <children>
-                  <Pane layoutX="-2.0" prefHeight="51.0" prefWidth="5.0" style="-fx-background-color: #F0F0F0;" />
-                  <Label layoutX="40.0" layoutY="16.0" text="Home" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
          </children>
       </VBox>
       <Pane layoutX="118.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">
