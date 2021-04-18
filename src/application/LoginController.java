@@ -112,7 +112,7 @@ public class LoginController implements Initializable
     	//query
     	else 
     	{
-    	   String sql="SELECT * FROM patient where pid= "+userId+" and ph_no= '"+password+"'";
+    	   String sql="SELECT * FROM patient where p_id= "+userId+" and ph_no= '"+password+"'";
     	   try {
     		  preparedStatement= con.prepareStatement(sql);
 //    		  preparedStatement.setString(1, userId);

@@ -6,7 +6,7 @@ public class Patient_In {
 	int pid,room_no,report_no,bill_no,adv_pay;
 	Date in_date,out_date;
 	String treatment,presc;
-	public Patient_In(int pid, Date in_date,Date out_date,int room_no, int report_no, int bill_no,
+	public Patient_In(int pid, Date in_date, int report_no, int bill_no,int room_no,Date out_date,
 			String treatment, String presc, int adv_pay) {
 		super();
 		this.pid = pid;
