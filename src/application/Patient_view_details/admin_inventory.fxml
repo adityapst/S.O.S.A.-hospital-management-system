@@ -76,16 +76,16 @@
             <TableView layoutX="67.0" layoutY="91.0" prefHeight="506.0" prefWidth="756.0">
                <columns>
                   <TableColumn prefWidth="219.20005798339844" text="Goods_ID" />
-                  <TableColumn prefWidth="231.99993896484375" text="Staff_ID" />
-                  <TableColumn prefWidth="220.79998779296875" text="P_Name" />
-                  <TableColumn minWidth="0.0" prefWidth="83.2000732421875" text="Qty" />
+                  <TableColumn prefWidth="360.0" text="P_Name" />
+                  <TableColumn minWidth="0.0" prefWidth="177.60003662109375" text="Qty" />
                </columns>
             </TableView>
-            <Label alignment="CENTER" layoutX="348.0" layoutY="48.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Inventory">
+            <Label alignment="CENTER" layoutX="347.0" layoutY="24.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Inventory">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button layoutX="67.0" layoutY="37.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Add/Edit Item" />
          </children>
       </Pane>
    </children>
