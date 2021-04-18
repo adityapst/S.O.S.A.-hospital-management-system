@@ -81,8 +81,8 @@
             <TableView fx:id="Bill_Report" layoutX="83.0" layoutY="84.0" prefHeight="524.0" prefWidth="723.0">
                <columns>
                   <TableColumn fx:id="Bill_No" prefWidth="145.0" text="Bill_No" />
-                  <TableColumn fx:id="Room_Charge" prefWidth="145.0" text="Room_Charge" />
-                  <TableColumn fx:id="Treatment_Charge1" prefWidth="145.0" text="Treatment_Charge" />
+                  <TableColumn fx:id="Room_Charge" prefWidth="145.0" text="Room_Charges" />
+                  <TableColumn fx:id="Treatment_Charge1" prefWidth="145.0" text="Treatment_Charges" />
                   <TableColumn fx:id="Medicine_Charge" prefWidth="145.0" text="Medicine_Charges" />
                   <TableColumn fx:id="Net_Amount" prefWidth="139.79998779296875" text="NET_AMOUNT" />
                </columns>
