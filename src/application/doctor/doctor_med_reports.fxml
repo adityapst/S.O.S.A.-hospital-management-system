@@ -23,7 +23,12 @@
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Patient Details" textAlignment="CENTER" translateY="-1.0" wrapText="true">
+            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="112.0" styleClass="button-left" text="In-Patient History" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI" size="15.9" />
+               </font>
+            </Button>
+            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Out-Patient History" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
