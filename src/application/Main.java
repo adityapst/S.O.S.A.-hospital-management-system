@@ -14,68 +14,22 @@ import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.StageStyle;
 
-
-/**
-*
-* @author Sammy Diesel
-*/
-
 public class Main extends Application 
 {
-	//define your offsets here
-    private double xOffset = 0;
-    private double yOffset = 0;
- 
+
     
 	@Override
 	public void start(Stage primaryStage) throws Exception
 	{
 		try 
 		{
-
-			Parent root = FXMLLoader.load(getClass().getResource("Login/Login.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
 			
 			//we gonna remove the borderless thingie.  
-<<<<<<< HEAD
-	        primaryStage.initStyle(StageStyle.DECORATED);
-	        primaryStage.setMaximized(false);
-
-	        //grab your root here
-	        root.setOnMousePressed(new EventHandler<MouseEvent>() {
-	            @Override
-	            public void handle(MouseEvent event) {
-	                xOffset = event.getSceneX();
-	                yOffset = event.getSceneY();
-	            }
-	        });
-
-	        //sorry about that - Windows defender issue.
-	        //move around here
-	        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
-	            @Override
-	            public void handle(MouseEvent event) {
-	                primaryStage.setX(event.getScreenX() - xOffset);
-	                primaryStage.setY(event.getScreenY() - yOffset);
-	            }
-	        });
-			
-			Scene scene = new Scene(root,1000,716);
-//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-
-//			Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-//			
-//			//we gonna remove the borderless thingie.  
-//	        primaryStage.initStyle(StageStyle.DECORATED);
-//			Scene scene = new Scene(root,900,716);
-//
-//			primaryStage.setScene(scene);
-//			primaryStage.show();
-=======
 	        primaryStage.initStyle(StageStyle.UNDECORATED);
 			Scene scene = new Scene(root,900,716);
 			primaryStage.setScene(scene);
 			primaryStage.show();
->>>>>>> branch 'main' of https://github.com/adityapst/DBMS-hospital-management-system
 		} 
 		
 		catch(Exception e) 
@@ -84,13 +38,8 @@ public class Main extends Application
 		}
 	}
 	
-
-	/**
-     * @param args the command line arguments
-     */
 	public static void main(String[] args) 
 	{
 		launch(args);
 	}
 }
-

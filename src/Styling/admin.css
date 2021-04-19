@@ -5,12 +5,19 @@
 
 .inner-bg
 {
-	 -fx-background-image: url("../Images/whitebricksbg.jpg");
+	 -fx-background-image: url("../Images/woodbg2.png");
      /*-fx-background-position: center;*/
 	-fx-background-size: 1100 767    ;
 	-fx-background-color:   #78A8FC;
 	-fx-background-repeat: stretch;
 	-fx-background-radius: 10;
+}
+
+.header-bg
+{
+	 -fx-background-color:#172333;
+	 -fx-text-fill: #FFFFFF;
+	 -fx-font-size: 21;
 }
 
 
@@ -26,7 +33,7 @@
 }
 .label:hover
 {
-	-fx-text-fill: red;
+	-fx-text-fill: rgb(255,128,0);
 	-fx-font-size: 15;
 	-fx-cursor: hand;
 }

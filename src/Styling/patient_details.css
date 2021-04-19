@@ -7,13 +7,26 @@
 	-fx-background-image:url("../Images/whitebricksbg.jpg");
 }
 
+.header-bg
+{
+	 -fx-background-color:#172333;
+	 -fx-text-fill: #FFFFFF;
+	 -fx-font-size: 21;
+}
+
 .inner-bg
 {
 	 /*-fx-background-image: url("../Images/bgblue4.jpg");
 	 -fx-background-repeat: no-repeat;
-     -fx-background-position: center;*/
+     -fx-background-position: center;
 	
 	-fx-background-color: rgba(0,51,102, 0.7);
+	-fx-background-radius: 10; */
+	
+	-fx-background-image: url("../Images/woodbg2.png");
+	-fx-background-size: 1100 767    ;
+	-fx-background-color:   #78A8FC;
+	-fx-background-repeat: stretch;
 	-fx-background-radius: 10;
 }
 
@@ -24,7 +37,7 @@
 }
 .label:hover
 {
-	-fx-text-fill: red;
+	-fx-text-fill: rgb(255,128,0);
 	-fx-font-size: 15;
 	-fx-cursor: hand;
 }
