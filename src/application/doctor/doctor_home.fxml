@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.doctor.Doc_Home_Controller">
    <children>
       <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
          <children>
@@ -27,19 +27,19 @@
                   </Button>
                </children>
             </Pane>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="72.0" prefWidth="112.0" styleClass="button-left" text="In-Patient History" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="In_Patienthistory" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#In_Patienthistory" prefHeight="72.0" prefWidth="112.0" styleClass="button-left" text="In-Patient History" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="71.0" prefWidth="118.0" styleClass="button-left" text="Out-Patient History" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="Out_Patienthistory" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#Out_Patienthistory" prefHeight="71.0" prefWidth="118.0" styleClass="button-left" text="Out-Patient History" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
             </Button>
             <Pane prefHeight="51.0" prefWidth="118.0" style="-fx-background-color: #293950;">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Med Reports">
+                  <Button fx:id="MedReports" alignment="CENTER" mnemonicParsing="false" onAction="#MedReports" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Med Reports">
                      <font>
                         <Font name="Segoe UI" size="16.0" />
                      </font>
@@ -93,13 +93,13 @@
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Staff_ID" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Department" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Designation" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Label fx:id="Staff_id" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="DOB" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="Staff_name" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Label fx:id="salary" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label fx:id="phone_no" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Label fx:id="desg" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Label fx:id="dept" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>

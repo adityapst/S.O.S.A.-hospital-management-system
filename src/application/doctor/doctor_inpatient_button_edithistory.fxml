@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="622.0" prefWidth="890.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="622.0" prefWidth="890.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.doctor.Add_Inpatient_Controller">
    <children>
       <Pane layoutX="10.0" layoutY="10.0" prefHeight="186.0" prefWidth="187.0" styleClass="inner-bg" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
             <Separator layoutX="50.0" layoutY="62.0" prefHeight="20.0" prefWidth="700.0" />
             <Label alignment="CENTER" layoutX="70.0" layoutY="12.0" prefHeight="43.0" prefWidth="186.0" styleClass="label-header" text="Edit In-Patient History" />
-            <Button layoutX="652.0" layoutY="237.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Save info" />
-            <Button layoutX="652.0" layoutY="317.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Reset" />
+            <Button fx:id="Save" layoutX="652.0" layoutY="237.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Save info" />
+            <Button fx:id="Reset" layoutX="652.0" layoutY="317.0" mnemonicParsing="false" onAction="#reset" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Reset" />
          </children>
       </Pane>
       <GridPane layoutX="60.0" layoutY="104.0" prefHeight="470.0" prefWidth="549.0">
@@ -33,10 +33,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <TextField fx:id="Pid" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <TextField fx:id="In_Date" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <TextField fx:id="Treatment" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <TextField fx:id="Prescription" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Label alignment="CENTER" prefHeight="31.0" prefWidth="97.0" text="Prescription" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Label alignment="CENTER" prefHeight="31.0" prefWidth="138.0" text="Treatment" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="In-Date" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />

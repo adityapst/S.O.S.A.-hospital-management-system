@@ -1,5 +1,5 @@
 
-package application.Patient_view_details;
+package application;
 
 public class admin_med_rep {
 	int report_no;

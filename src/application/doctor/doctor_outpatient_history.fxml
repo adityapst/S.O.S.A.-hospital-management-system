@@ -10,17 +10,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.doctor.Doc_Out_controller">
    <children>
       <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
          <children>
             <AnchorPane prefHeight="157.0" prefWidth="118.0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="118.0" styleClass="button-left" text="Doctor Home" textAlignment="CENTER" translateY="-1.0" wrapText="true">
+            <Button fx:id="Doctor_Home" alignment="CENTER" mnemonicParsing="false" onAction="#Doctor_Home" prefHeight="64.0" prefWidth="118.0" styleClass="button-left" text="Doctor Home" textAlignment="CENTER" translateY="-1.0" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="In-Patient History" textAlignment="CENTER" translateY="-1.0" wrapText="true">
+            <Button fx:id="In_Patienthistory" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#In_Patienthistory" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="In-Patient History" textAlignment="CENTER" translateY="-1.0" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
@@ -35,13 +35,13 @@
                   </Button>
                </children>
             </Pane>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="112.0" styleClass="button-left" text="Med Reports">
+            <Button fx:id="MedReports" alignment="CENTER" mnemonicParsing="false" onAction="#MedReports" prefHeight="51.0" prefWidth="112.0" styleClass="button-left" text="Med Reports">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
             <AnchorPane prefHeight="77.0" prefWidth="118.0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
+            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
@@ -78,7 +78,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="93.0" layoutY="51.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Edit History" />
+            <Button fx:id="Edit" layoutX="93.0" layoutY="51.0" mnemonicParsing="false" onAction="#Edit" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Edit History" />
          </children>
          <styleClass>
             <String fx:value="main-bg" />

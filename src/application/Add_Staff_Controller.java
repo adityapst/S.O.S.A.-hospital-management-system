@@ -68,7 +68,8 @@ public class Add_Staff_Controller implements Initializable {
 			String p=Ph_No.getText();
 			String ds=Desig.getText();
 			String dp=Dept.getText();
-			st.setInt(1,nw+1);
+			nw++;
+			st.setInt(1,nw);
 			st.setString(2,d);
 			st.setString(3,s);
 			st.setInt(4,sal);
@@ -76,15 +77,10 @@ public class Add_Staff_Controller implements Initializable {
 			st.setString(6,ds);
 			st.setString(7,dp);
 			int res=st.executeUpdate();
-			Staff_Id.clear();
-	    	DOB.clear();
-	    	St_Name.clear();
-	    	Salary.clear();
-	    	Ph_No.clear();
-	    	Desig.clear();
-	    	Dept.clear();
+			Staff_Id.setText(String.valueOf(nw));
+//			Staff_Id.clear();
 	    	Staff_controller stff=new Staff_controller(); 
-	    			stff.loadDate();	
+	    	stff.loadDate();	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
