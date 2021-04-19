@@ -13,22 +13,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.doctor.Doc_MedRep_Controller">
    <children>
       <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
          <children>
             <AnchorPane prefHeight="157.0" prefWidth="118.0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="118.0" styleClass="button-left" text="Doctor Home" textAlignment="CENTER" translateY="-1.0" wrapText="true">
+            <Button fx:id="DoctorHome" alignment="CENTER" mnemonicParsing="false" onAction="#DoctorHome" prefHeight="64.0" prefWidth="118.0" styleClass="button-left" text="Doctor Home" textAlignment="CENTER" translateY="-1.0" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="112.0" styleClass="button-left" text="In-Patient History" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="In_Patienthistory" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#In_Patienthistory" prefHeight="61.0" prefWidth="112.0" styleClass="button-left" text="In-Patient History" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Out-Patient History" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="Out_Patienthistory" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#Out_Patienthistory" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Out-Patient History" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
@@ -44,7 +44,7 @@
                </children>
             </Pane>
             <AnchorPane prefHeight="77.0" prefWidth="118.0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
+            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
@@ -66,8 +66,8 @@
                <children>
                   <Separator layoutX="50.0" layoutY="62.0" prefHeight="20.0" prefWidth="700.0" />
                   <Label alignment="CENTER" layoutX="70.0" layoutY="12.0" prefHeight="43.0" prefWidth="127.0" styleClass="label-header" text="Medical Report" />
-                  <Button layoutX="646.0" layoutY="234.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Save" />
-                  <Button layoutX="646.0" layoutY="324.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Reset" />
+                  <Button fx:id="save" layoutX="646.0" layoutY="234.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Save" />
+                  <Button fx:id="reset" layoutX="646.0" layoutY="324.0" mnemonicParsing="false" onAction="#reset" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Reset" />
                </children>
             </Pane>
             <GridPane layoutX="60.0" layoutY="104.0" prefHeight="470.0" prefWidth="549.0">
@@ -86,22 +86,22 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <TextField fx:id="Report_No" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <TextField fx:id="Staff_Id" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <TextField fx:id="P_Id" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <TextField fx:id="disdiag" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <TextField fx:id="Bp" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <TextField fx:id="temp" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="BP" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="143.0" text="Temperature" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="138.0" text="Disease Diagnosed" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Patient_ID" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Staff_ID" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Report_No" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                  <TextField fx:id="pulse" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Pulse" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Weight" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-                  <TextField prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <TextField fx:id="weight" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>

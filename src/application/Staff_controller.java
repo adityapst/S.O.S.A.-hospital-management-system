@@ -138,7 +138,6 @@ public class Staff_controller implements Initializable  {
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
-            loadDate();	
         } 
         catch (IOException ex) {
             System.err.println(ex.getMessage());

@@ -1,5 +1,5 @@
 
-package application.Patient_view_details;
+package application;
 
 import java.net.URL;
 import java.sql.Connection;
