@@ -1,4 +1,4 @@
-package application.Patient_view_details;
+package application;
 
 import java.sql.Date;
 
@@ -10,7 +10,7 @@ public class Staff {
 	String desig;
 	String dept;
 	String ph_no;
-	public Staff(int staff_id, String st_name, Date dOB, int salary, String ph_no, String desig, String dept) {
+	public Staff(int staff_id,Date dOB, String st_name , int salary, String ph_no, String desig, String dept) {
 		super();
 		Staff_id = staff_id;
 		DOB = dOB;
