@@ -1,43 +1,45 @@
 package application;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class patient_history_controller implements Initializable {
+public class Admin_home_controller {
+	@FXML
+	private Button Inventory;
 	
 	@FXML
-	private Button home;
+	private Button Staff;
 	
 	@FXML
-	private Button visith;
+	private Button PatientHistory;
 	
 	@FXML
-	private Button medrpt;
+	private Button Bills;
 	
 	@FXML
-	private Button bill;
+	private Button Rooms;
 	
 	@FXML
-	private Button settings;
+	private Button MedReports;
 	
-	public void home(ActionEvent event) {
-		try {
+	@FXML
+	private Button Settings;
+	
+	public void MedReports(ActionEvent event) {
+    	try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_med_reports.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -47,14 +49,31 @@ public class patient_history_controller implements Initializable {
         }
 	}
 	
-	public void visith(ActionEvent event) {
-		try {
+    public void Staff(ActionEvent event) {
+    	try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_history.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_staff.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+    
+    public void PatientHistory(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_patient_history.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -64,14 +83,48 @@ public class patient_history_controller implements Initializable {
         }
 	}
 	
-	public void medrpt(ActionEvent event) {
-		try {
+    public void Bills(ActionEvent event) {
+    	try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_med_report.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_bills.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+    
+    public void Rooms(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_rooms.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+    
+    public void Inventory(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_inventory.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -81,30 +134,14 @@ public class patient_history_controller implements Initializable {
         }
 	}
 	
-	public void bill(ActionEvent event) {
-		try {
+    public void Settings(ActionEvent event) {
+    	try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_bills.fxml")));
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-	}
-	
-	public void settings(ActionEvent event) {
-		try {
-            //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Settings.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -112,14 +149,6 @@ public class patient_history_controller implements Initializable {
         catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
-	}
-	
-
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
-	}
-
+    }
+    
 }

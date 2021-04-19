@@ -77,9 +77,29 @@ public class LoginController implements Initializable
                 System.err.println(ex.getMessage());
             }
     	} 
-    	else if(logIn_Staff().equals("Success"))
+    	if(logIn_Staff().equals("Success"))
     	{
-    		
+    		try {
+                //add you loading or delays - ;-)
+            	
+            	FXMLLoader loader=new FXMLLoader(getClass().getResource("admin_home.fxml"));
+            	Parent root=loader.load();
+            	Admin_home_controller admin_controller=loader.getController();
+            	
+                //Node node = (Node) event.getSource();
+                //Stage stage = (Stage) node.getScene().getWindow();
+                //stage.setMaximized(true);
+//                stage.close();
+                //Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+//            	admin_controller.showInfo(txtUsername.getText(),txtPassword.getText());
+                Stage stage=new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } 
+            catch (IOException ex) {
+                System.err.println(ex.getMessage());
+            }
     	}
     }
     

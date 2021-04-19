@@ -12,7 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Admin_home_controller">
+
    <children>
       <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
          <children>
@@ -27,38 +29,51 @@
                   </Button>
                </children>
             </Pane>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="112.0" styleClass="button-left" text="Staff">
+
+            <Button fx:id="Staff" alignment="CENTER" mnemonicParsing="false" onAction="#Staff" prefHeight="51.0" prefWidth="112.0" styleClass="button-left" text="Staff">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Patient History" textAlignment="CENTER" translateY="-1.0" wrapText="true">
+
+            <Button fx:id="PatientHistory" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#PatientHistory" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Patient History" textAlignment="CENTER" translateY="-1.0" wrapText="true">
+
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Med Reports" translateY="-1.0">
+            <Button fx:id="MedReports" alignment="CENTER" mnemonicParsing="false" onAction="#MedReports" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Med Reports" translateY="-1.0">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Bills">
+
+            <Button fx:id="Bills" alignment="CENTER" mnemonicParsing="false" onAction="#Bills" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Bills">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Rooms">
+
+            <Button fx:id="Rooms" alignment="CENTER" mnemonicParsing="false" onAction="#Rooms" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Rooms">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Inventory">
+
+            <Button fx:id="Inventory" alignment="CENTER" mnemonicParsing="false" onAction="#Inventory" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Inventory">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
             <AnchorPane prefHeight="77.0" prefWidth="118.0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
+
+            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
@@ -75,7 +90,9 @@
             </Label>
          </children>
       </Pane>
-      <AnchorPane layoutX="118.0" layoutY="51.0" prefHeight="622.0" prefWidth="890.0" stylesheets="@../../Styling/patient_details.css">
+
+      <AnchorPane layoutX="118.0" layoutY="51.0" prefHeight="622.0" prefWidth="890.0">
+
          <children>
             <Pane layoutX="10.0" layoutY="10.0" prefHeight="186.0" prefWidth="187.0" styleClass="inner-bg" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <children>
@@ -98,14 +115,16 @@
                <children>
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="138.0" style="-fx-text-fill: black;" text="DOB" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="101.0" style="-fx-text-fill: black;" text="Name" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" style="-fx-text-fill: black;" text="Admin ID" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+
+                  <Label alignment="CENTER" prefHeight="31.0" prefWidth="120.0" style="-fx-text-fill: black;" text="Admin ID" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="138.0" style="-fx-text-fill: black;" text="Designation" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="138.0" style="-fx-text-fill: black;" text="Phone Number" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="Label" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="Label" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="Label" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="Label" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="Label" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="ADMIN@123" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="LODU LALIT" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="15-AUG-1947" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="9696969696" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="ADMIN" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+
                </children>
             </GridPane>
          </children>
