@@ -64,6 +64,9 @@ public class admin_bill_controller implements Initializable {
 	@FXML
 	private TableColumn<Bills,String>Net_Amount;
 	
+	int userId;
+	public String Phone_No;
+	
 	String query = null;
     Connection connection = null ;
     PreparedStatement preparedStatement = null ;
@@ -76,6 +79,8 @@ public class admin_bill_controller implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		userId=CurrentStatus.getCs().getStaff_id();
+		Phone_No=CurrentStatus.getCs().getPh_no();
 		loadDate();
 		
 	}
@@ -93,7 +98,7 @@ public class admin_bill_controller implements Initializable {
             	 int roomcharge=resultSet.getInt("ROOM_CHARGE");
             	 int treatmentCharge=resultSet.getInt("TREAT_CHARGE");
             	 int medicineCharge=resultSet.getInt("MED_CHARGE");
-            	 int net=medicineCharge+treatmentCharge+roomcharge;
+            	 int net=resultSet.getInt("NET_AMT");
             	 
             	 boolean add=bills_list.add(new  Bills(billno,roomcharge,treatmentCharge,medicineCharge,net));
             	 Bill_Report.setItems(bills_list);

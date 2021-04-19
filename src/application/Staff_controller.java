@@ -89,7 +89,7 @@ public class Staff_controller implements Initializable  {
 	}
 	
     
-    void loadDate() {
+    private void loadDate() {
     	connection=ConnectionUtil.ConDB();
     	 try {
     		 staff_list.clear();

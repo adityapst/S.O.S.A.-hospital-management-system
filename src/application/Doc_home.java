@@ -1,4 +1,4 @@
-package application.doctor;
+package application;
 
 public class Doc_home {
 	int Staff_id;

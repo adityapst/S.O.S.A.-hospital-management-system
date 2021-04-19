@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.doctor.Doc_Out_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Doc_Out_controller">
    <children>
       <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
          <children>
@@ -57,7 +57,7 @@
             </Label>
          </children>
       </Pane>
-      <AnchorPane layoutX="118.0" layoutY="55.0" prefHeight="618.0" prefWidth="890.0" stylesheets="@../../Styling/patient_details.css">
+      <AnchorPane layoutX="118.0" layoutY="55.0" prefHeight="618.0" prefWidth="890.0" stylesheets="@../Styling/patient_details.css">
          <children>
             <Pane layoutX="200.0" layoutY="123.0" prefHeight="186.0" prefWidth="187.0" styleClass="inner-bg" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <children>
@@ -78,7 +78,6 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="Edit" layoutX="93.0" layoutY="51.0" mnemonicParsing="false" onAction="#Edit" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Edit History" />
          </children>
          <styleClass>
             <String fx:value="main-bg" />

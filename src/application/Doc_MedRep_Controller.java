@@ -1,4 +1,4 @@
-package application.doctor;
+package application;
 
 import java.io.IOException;
 import java.net.URL;
@@ -67,11 +67,15 @@ public class Doc_MedRep_Controller implements Initializable  {
 	String query = null;
     Connection connection = null ;
     PreparedStatement preparedStatement = null ;
+    
+    int userId;
+	public String Phone_No;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+		userId=CurrentStatus.getCs().getStaff_id();
+		Phone_No=CurrentStatus.getCs().getPh_no();
 	}
 	
 	public void save(ActionEvent event) {

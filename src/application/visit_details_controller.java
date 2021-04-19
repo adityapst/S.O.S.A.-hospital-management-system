@@ -96,12 +96,8 @@ public class visit_details_controller implements Initializable {
 	private TableColumn<Patient_In,String>presc_op;
 	
 	
-	
-	public String userId,Phone_No;	
-	public void showInfo(String name,String Phone) {
-		userId=name;
-		Phone_No=Phone;
-	}
+	int userId;
+	public String Phone_No;
 	
 	String query = null;
     Connection connection = null ;
@@ -117,6 +113,8 @@ public class visit_details_controller implements Initializable {
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+    	userId=CurrentStatus.getCs().getMember_uid();
+		Phone_No=CurrentStatus.getCs().getPh_no();
     	loadDate_In();
     	loadDate_Out();
 	}
@@ -126,7 +124,7 @@ public class visit_details_controller implements Initializable {
     	 try {
     		 Patient_In_list.clear();
              
-             query = "SELECT * FROM in_pat";
+             query = "SELECT * FROM in_pat where PID="+userId;
              preparedStatement = connection.prepareStatement(query);
              resultSet = preparedStatement.executeQuery();
              
@@ -167,7 +165,7 @@ public class visit_details_controller implements Initializable {
     	 try {
     		 Patient_Out_list.clear();
              
-             query = "SELECT * FROM out_pat";
+             query = "SELECT * FROM out_pat where PID="+userId;
              preparedStatement = connection.prepareStatement(query);
              resultSet = preparedStatement.executeQuery();
              

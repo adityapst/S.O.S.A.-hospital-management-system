@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Admin_home_controller">
 
    <children>
@@ -119,11 +118,11 @@
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="120.0" style="-fx-text-fill: black;" text="Admin ID" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="138.0" style="-fx-text-fill: black;" text="Designation" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="138.0" style="-fx-text-fill: black;" text="Phone Number" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="ADMIN@123" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="LODU LALIT" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="15-AUG-1947" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="9696969696" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="ADMIN" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Label fx:id="AdminId" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="ADMIN@123" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="Name" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="LODU LALIT" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="Dob" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="15-AUG-1947" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Label fx:id="Phone" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="9696969696" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label fx:id="Desig" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="355.0" style="-fx-text-fill: black;" text="ADMIN" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
 
                </children>
             </GridPane>

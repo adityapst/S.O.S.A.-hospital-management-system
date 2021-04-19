@@ -79,8 +79,8 @@ public class Add_Staff_Controller implements Initializable {
 			int res=st.executeUpdate();
 			Staff_Id.setText(String.valueOf(nw));
 //			Staff_Id.clear();
-	    	Staff_controller stff=new Staff_controller(); 
-	    	stff.loadDate();	
+//	    	Staff_controller stff=new Staff_controller(); 
+//	    	stff.loadDate();	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

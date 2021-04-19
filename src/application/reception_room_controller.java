@@ -4,13 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import Utils.ConnectionUtil;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,100 +15,92 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class patient_details_controller implements Initializable {
+public class reception_room_controller implements Initializable  {
 	
 	@FXML
-	private Button home;
+	private TextField l1;
 	
 	@FXML
-	private Button visith;
+	private TextField l2;
 	
 	@FXML
-	private Button medrpt;
+	private TextField l3;
 	
 	@FXML
-	private Button bill;
+	private TextField l4;
+	
+	@FXML
+	private Button reset;
+	
+	@FXML
+	private Button save;
+	
+	@FXML
+	private Button ReceptionHome;
+	
+	@FXML
+	private Button OutPatient;
+	
+	@FXML
+	private Button Bills;
+	
+	@FXML
+	private Button InPatient;
 	
 	@FXML
 	private Button settings;
 	
-	@FXML
-	private Label l1;
-	
-	@FXML
-	private Label l2;
-	
-	@FXML
-	private Label l3;
-	
-	@FXML
-	private Label l4;
-	
-	@FXML
-	private Label l5;
-	
-	@FXML
-	private Label l6;
-	
-	int userId;
-	public String Phone_No;
-	
-	
-//	public void showInfo(String name,String Phone) {
-//		userId=Integer.parseInt(name);
-//		Phone_No=Phone;
-//	}
 	String query = null;
     Connection connection = null ;
     PreparedStatement preparedStatement = null ;
-    ResultSet resultSet = null ;
-	
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		userId=CurrentStatus.getCs().getMember_uid();
-		Phone_No=CurrentStatus.getCs().getPh_no();
-		loadData();
+		
 	}
 	
-	private void loadData(){
+	public void save(ActionEvent event) {
 		connection=ConnectionUtil.ConDB();
-		try {
-			
-            query = "SELECT * FROM patient where P_ID="+userId+" and ph_No='"+Phone_No+"'";
-            preparedStatement = connection.prepareStatement(query);
-            resultSet = preparedStatement.executeQuery();
-            
-            while (resultSet.next()){
-            	   l1.setText(resultSet.getString("P_ID"));
-            	   l2.setText(resultSet.getString("NAME"));
-            	   l3.setText(resultSet.getString("DOB"));
-            	   l4.setText(resultSet.getString("BLOOD_GRP"));
-            	   l5.setText(resultSet.getString("GENDER"));
-            	   l6.setText(resultSet.getString("PH_NO"));
-            }
-        } catch (SQLException ex) {
-       	 System.out.println("Error");
-//            Logger.getLogger(med_report_controller.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        try {
+        	 int roomno=Integer.parseInt(l1.getText());
+        	 String roomtype=l2.getText();
+        	 int charge=Integer.parseInt(l3.getText());
+        	 int max_occu=Integer.parseInt(l4.getText());
+        	 PreparedStatement st= connection.prepareStatement("INSERT INTO ROOM (ROOM_NO,ROOM_TYPE,CHARGE,MAX_OCC) values(?,?,?,?)");
+        	 st.setInt(1,roomno);
+        	 st.setString(2,roomtype);
+        	 st.setInt(3,charge);
+        	 st.setInt(4,max_occu);
+        	 int res=st.executeUpdate(); 
+        	l1.clear();
+     		l2.clear();
+     		l3.clear();
+     		l4.clear();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 	
-	public void home(ActionEvent event) {
+	public void reset(ActionEvent event) {
+		l1.clear();
+		l2.clear();
+		l3.clear();
+		l4.clear();
+	}
+	
+	public void ReceptionHome(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("reception_home.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -121,14 +110,14 @@ public class patient_details_controller implements Initializable {
         }
 	}
 	
-	public void visith(ActionEvent event) {
+	public void OutPatient(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_history.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("reception_patient_add_outpatient.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -138,14 +127,14 @@ public class patient_details_controller implements Initializable {
         }
 	}
 	
-	public void medrpt(ActionEvent event) {
+	public void Bills(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_med_report.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("reception_bills.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -155,16 +144,17 @@ public class patient_details_controller implements Initializable {
         }
 	}
 	
-	public void bill(ActionEvent event) {
+	public void InPatient(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_bills.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("reception_patient_add_inpatient.fxml")));
             stage.setScene(scene);
             stage.show();
+
         } 
         catch (IOException ex) {
             System.err.println(ex.getMessage());
@@ -178,7 +168,7 @@ public class patient_details_controller implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("settings.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -187,8 +177,4 @@ public class patient_details_controller implements Initializable {
             System.err.println(ex.getMessage());
         }
 	}
-	
-
-
-
 }

@@ -1,4 +1,4 @@
-package application.doctor;
+package application;
 
 import java.io.IOException;
 import java.net.URL;
@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 import Utils.ConnectionUtil;
 import application.Add_Staff_Controller;
@@ -23,7 +24,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class Doc_inpat_controller implements Initializable {
@@ -72,6 +75,12 @@ public class Doc_inpat_controller implements Initializable {
 	 
 	 @FXML
 	 private Button Settings;
+	 
+	 @FXML
+	 private TextField Search;
+	 
+	 int userId;
+	 public String Phone_No;
 	
 	
 	String query = null;
@@ -85,6 +94,8 @@ public class Doc_inpat_controller implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		userId=CurrentStatus.getCs().getStaff_id();
+		Phone_No=CurrentStatus.getCs().getPh_no();
 		loadDate_In();		
 	}
 	private void loadDate_In() {
@@ -92,7 +103,7 @@ public class Doc_inpat_controller implements Initializable {
     	 try {
     		 Patient_In_list.clear();
              
-             query = "SELECT * FROM in_pat";
+             query = "SELECT * FROM IN_PAT O,MED_REP MP where O.REPORT_NO=MP.REPORT_NO AND MP.STAFF_ID="+userId;
              preparedStatement = connection.prepareStatement(query);
              resultSet = preparedStatement.executeQuery();
              
@@ -192,23 +203,41 @@ public class Doc_inpat_controller implements Initializable {
         }
 	}
 	
-	public void Edit(ActionEvent event) {
-		try {
-    		FXMLLoader loader=new FXMLLoader(getClass().getResource("doctor_inpatient_button_edithistory.fxml"));
-        	Parent root=loader.load();
-        	Add_Inpatient_Controller add_controller=loader.getController();
-        	
-            //Node node = (Node) event.getSource();
-            //Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            //Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
-            Stage stage=new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
+	public void Search(KeyEvent event) {
+		connection=ConnectionUtil.ConDB();
+   	 try {
+   		    Patient_In_list.clear();
+   		    String ser=Search.getText();
+   		    if(Pattern.matches("[0-9]{1,}", ser))
+   		     	query = "SELECT * FROM IN_PAT O,MED_REP MP where O.REPORT_NO=MP.REPORT_NO AND MP.STAFF_ID="+userId+" and PID LIKE '"+Search.getText()+"%'";
+   		    else query = "SELECT * FROM IN_PAT O,MED_REP MP where O.REPORT_NO=MP.REPORT_NO AND MP.STAFF_ID="+userId;
+   		    preparedStatement = connection.prepareStatement(query);
+   		    System.out.println(query);
+            
+            resultSet = preparedStatement.executeQuery();
+            
+            while (resultSet.next()){
+           	 boolean add=Patient_In_list.add(new  Patient_In(
+           			 resultSet.getInt("PID"),
+                      resultSet.getDate("IN_DATE"),
+                      resultSet.getInt("REPORT_NO"),
+                      resultSet.getInt("BILL_NO"),
+                      resultSet.getInt("ROOM_NO"),
+                      resultSet.getDate("OUT_DATE"),
+                      resultSet.getString("TREAT"),
+                      resultSet.getString("PRESC"),
+                      resultSet.getInt("ADV_PAY")));
+           	 
+                
+            }
+            Pateint_In_Details.setItems(Patient_In_list);
+            
+            
+        } catch (SQLException ex) {
+       	 System.out.println("Error");
+//            Logger.getLogger(med_report_controller.class.getName()).log(Level.SEVERE, null, ex);
         }
 	}
+	
+	
 }

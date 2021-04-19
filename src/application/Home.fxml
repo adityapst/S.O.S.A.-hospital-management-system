@@ -69,7 +69,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button fx:id="staff" contentDisplay="TOP" layoutX="610.0" layoutY="10.0" mnemonicParsing="false" onAction="#staff" prefHeight="209.0" prefWidth="439.0" text="Staff" textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="staff" contentDisplay="TOP" layoutX="610.0" layoutY="10.0" mnemonicParsing="false" onAction="#staff" prefHeight="209.0" prefWidth="439.0" text="Admin" textAlignment="CENTER" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>

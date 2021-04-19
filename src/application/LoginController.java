@@ -50,56 +50,83 @@ public class LoginController implements Initializable
     PreparedStatement preparedStatement=null;
     ResultSet resultSet=null;
     
+    String designation;
+    public void getPerson(String Person) {
+    	designation=Person;
+    }
+    
     public void lbl_Close(MouseEvent event) {
     	System.exit(0);
     }
+    
     public void BtnSignin(ActionEvent event) {
-    	if (logIn_patient().equals("Success")) {
+    	if(logIn(designation).equals("Success")) {
+    		if(designation.equals("Patient")) {
+    			try {
+    			  CurrentStatus.getCs().setMember_uid(Integer.parseInt(txtUsername.getText()));
+    			  CurrentStatus.getCs().setPh_no(txtPassword.getText());
+              	  FXMLLoader loader=new FXMLLoader(getClass().getResource("patient_details.fxml"));
+              	  Parent root=loader.load();
+              	  patient_details_controller patient_controller=loader.getController();
+//                  patient_controller.showInfo(txtUsername.getText(),txtPassword.getText());
+                  
+                  Stage stage=new Stage();
+                  stage.setScene(new Scene(root));
+                  stage.show();
+  
+              } 
+              catch (IOException ex) {
+                  System.err.println(ex.getMessage());
+              }
+    		}
+            if(designation.equals("Doctor")) {
             try {
-                //add you loading or delays - ;-)
-            	
-            	FXMLLoader loader=new FXMLLoader(getClass().getResource("patient_details.fxml"));
-            	Parent root=loader.load();
-            	patient_details_controller patient_controller=loader.getController();
-            	
-                //Node node = (Node) event.getSource();
-                //Stage stage = (Stage) node.getScene().getWindow();
-                //stage.setMaximized(true);
-//                stage.close();
-                //Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
-                patient_controller.showInfo(txtUsername.getText(),txtPassword.getText());
-                Stage stage=new Stage();
-                stage.setScene(new Scene(root));
-                stage.show();
-
-            } 
-            catch (IOException ex) {
-                System.err.println(ex.getMessage());
-            }
-    	} 
-    	if(logIn_Staff().equals("Success"))
-    	{
-    		try {
-                //add you loading or delays - ;-)
-            	
-            	FXMLLoader loader=new FXMLLoader(getClass().getResource("admin_home.fxml"));
-            	Parent root=loader.load();
-            	Admin_home_controller admin_controller=loader.getController();
-            	
-                //Node node = (Node) event.getSource();
-                //Stage stage = (Stage) node.getScene().getWindow();
-                //stage.setMaximized(true);
-//                stage.close();
-                //Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
-//            	admin_controller.showInfo(txtUsername.getText(),txtPassword.getText());
-                Stage stage=new Stage();
-                stage.setScene(new Scene(root));
-                stage.show();
-
-            } 
-            catch (IOException ex) {
-                System.err.println(ex.getMessage());
-            }
+            	CurrentStatus.getCs().setStaff_id(Integer.parseInt(txtUsername.getText()));
+            	CurrentStatus.getCs().setPh_no(txtPassword.getText());
+              	FXMLLoader loader=new FXMLLoader(getClass().getResource("doctor_home.fxml"));
+              	Parent root=loader.load();
+              	Doc_Home_Controller dr_controller=loader.getController();
+                  Stage stage=new Stage();
+                  stage.setScene(new Scene(root));
+                  stage.show();
+  
+              } 
+              catch (IOException ex) {
+                  System.err.println(ex.getMessage());
+              }	
+    		}
+            if(designation.equals("Receptionist")) {
+            	try {
+            		CurrentStatus.getCs().setStaff_id(Integer.parseInt(txtUsername.getText()));
+                	CurrentStatus.getCs().setPh_no(txtPassword.getText());
+                  	FXMLLoader loader=new FXMLLoader(getClass().getResource("reception_home.fxml"));
+                  	Parent root=loader.load();
+                  	Reception_home_controller rec_controller=loader.getController();
+                      Stage stage=new Stage();
+                      stage.setScene(new Scene(root));
+                      stage.show();
+      
+                  } 
+                  catch (IOException ex) {
+                      System.err.println(ex.getMessage());
+                  }
+    		}
+            if(designation.equals("Admin")) {
+            	try {
+            		CurrentStatus.getCs().setStaff_id(Integer.parseInt(txtUsername.getText()));
+                	CurrentStatus.getCs().setPh_no(txtPassword.getText());
+                  	FXMLLoader loader=new FXMLLoader(getClass().getResource("admin_home.fxml"));
+                  	Parent root=loader.load();
+                  	Admin_home_controller admin_controller=loader.getController();
+                      Stage stage=new Stage();
+                      stage.setScene(new Scene(root));
+                      stage.show();
+      
+                  } 
+                  catch (IOException ex) {
+                      System.err.println(ex.getMessage());
+                  }
+    		}
     	}
     }
     
@@ -134,6 +161,58 @@ public class LoginController implements Initializable
     	{
     	   String sql="SELECT * FROM patient where p_id= "+userId+" and ph_no= '"+password+"'";
     	   try {
+    		  preparedStatement= con.prepareStatement(sql);
+//    		  preparedStatement.setString(1, userId);
+//    		  preparedStatement.setString(2, password);
+    		  resultSet=preparedStatement.executeQuery();
+    		  if(!resultSet.next()) {
+    			  setLblError(Color.TOMATO,"Enter correct UserId/Password");
+    			  status="Error";
+    		   }
+    		   else 
+    		   {
+    			 setLblError(Color.GREEN,"Login Successful...Redirecting");
+    		   }
+    	    }
+    	    catch(Exception ex) {
+    		   System.err.println(ex.getMessage());
+    		   status="Exception";
+    	    }
+    	}
+    	return status;
+    }
+    
+    private String logIn(String designation) {
+    	String status="Success";
+    	String userId=txtUsername.getText().toString();
+    	String password=txtPassword.getText().toString();
+    	if(userId.isEmpty() || password.isEmpty()) {
+    		setLblError(Color.TOMATO,"Empty Credentials");
+    		status="Error";
+    	}
+    	//query
+    	else 
+    	{
+    	   String sql=null;
+    	   
+    	   if(designation.equals("Doctor")) {
+    		   sql="SELECT * FROM STAFF where STAFF_ID= "+userId+" and ph_no= '"+password+"' AND DESIG='Doctor'";
+    	   }
+    	   
+    	   if(designation.equals("Patient")) {
+    		   sql="SELECT * FROM patient where p_id= "+userId+" and ph_no= '"+password+"'";
+    	   }
+    	   
+    	   if(designation.equals("Admin")) {
+    		   sql="SELECT * FROM STAFF where STAFF_ID= "+userId+" and ph_no= '"+password+"' AND DESIG='Admin'";
+    	   }
+    	   
+    	   if(designation.equals("Receptionist")) {
+    		   sql="SELECT * FROM STAFF where STAFF_ID= "+userId+" and ph_no= '"+password+"' AND DESIG='Receptionist'";
+    	   }
+    	   
+    	   try 
+    	   {
     		  preparedStatement= con.prepareStatement(sql);
 //    		  preparedStatement.setString(1, userId);
 //    		  preparedStatement.setString(2, password);

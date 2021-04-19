@@ -57,12 +57,8 @@ public class patient_bills_controller implements Initializable {
 	@FXML
 	private TableColumn<Bills,String>Net_Amount;
 	
-	public String userId,Phone_No;
-	
-	public void showInfo(String name,String Phone) {
-		userId=name;
-		Phone_No=Phone;
-	}
+	int userId;
+	public String Phone_No;
 	
 	String query = null;
     Connection connection = null ;
@@ -75,6 +71,8 @@ public class patient_bills_controller implements Initializable {
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+    	userId=CurrentStatus.getCs().getMember_uid();
+		Phone_No=CurrentStatus.getCs().getPh_no();
     	loadDate();
 	}
     
@@ -83,7 +81,7 @@ public class patient_bills_controller implements Initializable {
     	 try {
     		 bills_list.clear();
              
-             query = "SELECT * FROM bill";
+             query = "SELECT * FROM BILL B,IN_PAT I,OUT_PAT O where B.BILL_NO=I.BILL_NO AND B.BILL_NO=O.BILL_NO AND I.PID="+userId+" AND O.PID="+userId;
              preparedStatement = connection.prepareStatement(query);
              resultSet = preparedStatement.executeQuery();
              
@@ -92,7 +90,7 @@ public class patient_bills_controller implements Initializable {
             	 int roomcharge=resultSet.getInt("ROOM_CHARGE");
             	 int treatmentCharge=resultSet.getInt("TREAT_CHARGE");
             	 int medicineCharge=resultSet.getInt("MED_CHARGE");
-            	 int net=medicineCharge+treatmentCharge+roomcharge;
+            	 int net=resultSet.getInt("NET_AMT");
             	 
             	 boolean add=bills_list.add(new  Bills(billno,roomcharge,treatmentCharge,medicineCharge,net));
             	 Bill_Report.setItems(bills_list);

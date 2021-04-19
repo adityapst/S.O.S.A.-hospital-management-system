@@ -85,9 +85,9 @@ public class Inventory_Controller implements Initializable {
              resultSet = preparedStatement.executeQuery();
              
              while (resultSet.next()){
-            	 int good_id=resultSet.getInt("GOOD_ID");
+            	 int good_id=resultSet.getInt("GOODS_ID");
             	 String name=resultSet.getString("P_NAME");
-            	 int quant=resultSet.getInt("qty");
+            	 int quant=resultSet.getInt("QTY");
 //            	 int net=medicineCharge+treatmentCharge+roomcharge;
             	 
             	 boolean add=Inventory_list.add(new  Inventory(good_id,name,quant));
@@ -95,7 +95,7 @@ public class Inventory_Controller implements Initializable {
              }
                         
          } catch (SQLException ex) {
-        	 System.out.println("Error");
+        	 ex.printStackTrace();
 //             Logger.getLogger(med_report_controller.class.getName()).log(Level.SEVERE, null, ex);
          }
     	 good_id.setCellValueFactory(new PropertyValueFactory<>("goods_id"));

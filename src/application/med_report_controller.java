@@ -62,12 +62,8 @@ public class med_report_controller implements Initializable {
 	@FXML
 	private TableColumn<med_report,String>pulse;
 	
-   public String userId,Phone_No;
-	
-	public void showInfo(String name,String Phone) {
-		userId=name;
-		Phone_No=Phone;
-	}
+	int userId;
+	public String Phone_No;
 	
 	String query = null;
     Connection connection = null ;
@@ -80,7 +76,12 @@ public class med_report_controller implements Initializable {
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+   	 System.out.println("C");
+    	userId=CurrentStatus.getCs().getMember_uid();
+		Phone_No=CurrentStatus.getCs().getPh_no();
     	loadDate();
+   	 System.out.println("Hello");
+
 	}
     
     private void loadDate() {
@@ -88,10 +89,10 @@ public class med_report_controller implements Initializable {
     	 try {
     		 report_list.clear();
              
-             query = "SELECT * FROM med_rep";
+             query = "SELECT REPORT_NO,STAFF_ID,DIS_DIAG, BP,TEMP,WEIGHT,PULSE FROM med_rep where P_ID="+userId;
              preparedStatement = connection.prepareStatement(query);
              resultSet = preparedStatement.executeQuery();
-             
+        	 System.out.println("Ch!");
              while (resultSet.next()){
             	 boolean add=report_list.add(new  med_report(
                          resultSet.getInt("report_no"),
@@ -102,12 +103,14 @@ public class med_report_controller implements Initializable {
                          resultSet.getInt("weight"),
                          resultSet.getInt("pulse")));
             	 Med_Report.setItems(report_list);
+            	 System.out.println("Check!!");
                  
              }
              
              
          } catch (SQLException ex) {
-        	 System.out.println("Error");
+//        	 System.out.println();
+        	 ex.printStackTrace();
 //             Logger.getLogger(med_report_controller.class.getName()).log(Level.SEVERE, null, ex);
          }
     	report_no.setCellValueFactory(new PropertyValueFactory<>("report_no"));

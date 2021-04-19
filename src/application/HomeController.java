@@ -39,13 +39,20 @@ public class HomeController implements Initializable  {
 	public void doc(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+//            Node node = (Node) event.getSource();
+//            Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
-            stage.setScene(scene);
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("Login.fxml"));
+        	Parent root=loader.load();
+        	LoginController controller=loader.getController();
+            controller.getPerson("Doctor");
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
             stage.show();
+//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+//            stage.setScene(scene);
+//            stage.show();
 
         } 
         catch (IOException ex) {
@@ -55,14 +62,21 @@ public class HomeController implements Initializable  {
 	
 	public void staff(ActionEvent event) {
 		try {
+			FXMLLoader loader=new FXMLLoader(getClass().getResource("Login.fxml"));
+        	Parent root=loader.load();
+        	LoginController controller=loader.getController();
+            controller.getPerson("Admin");
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
             //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+//            Node node = (Node) event.getSource();
+//            Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
-            stage.setScene(scene);
-            stage.show();
+//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+//            stage.setScene(scene);
+//            stage.show();
 
         } 
         catch (IOException ex) {
@@ -72,14 +86,21 @@ public class HomeController implements Initializable  {
 	
 	public void pat(ActionEvent event) {
 		try {
+			FXMLLoader loader=new FXMLLoader(getClass().getResource("Login.fxml"));
+        	Parent root=loader.load();
+        	LoginController controller=loader.getController();
+            controller.getPerson("Patient");
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
             //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+//            Node node = (Node) event.getSource();
+//            Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
-            stage.setScene(scene);
-            stage.show();
+//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+//            stage.setScene(scene);
+//            stage.show();
 
         } 
         catch (IOException ex) {
@@ -89,14 +110,21 @@ public class HomeController implements Initializable  {
 	
 	public void rcp(ActionEvent event) {
 		try {
+			FXMLLoader loader=new FXMLLoader(getClass().getResource("Login.fxml"));
+        	Parent root=loader.load();
+        	LoginController controller=loader.getController();
+            controller.getPerson("Receptionist");
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
             //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+//            Node node = (Node) event.getSource();
+//            Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
-            stage.setScene(scene);
-            stage.show();
+//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+//            stage.setScene(scene);
+//            stage.show();
 
         } 
         catch (IOException ex) {
