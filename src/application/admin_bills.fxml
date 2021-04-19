@@ -9,27 +9,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.admin_bill_controller">
+
    <children>
       <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
          <children>
             <AnchorPane prefHeight="87.0" prefWidth="118.0" />
+
             <Button fx:id="Adminhome" alignment="CENTER" mnemonicParsing="false" onAction="#Adminhome" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Admin Home" translateY="-1.0">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
+
             <Button fx:id="Staff" alignment="CENTER" mnemonicParsing="false" onAction="#Staff" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Staff" translateY="-1.0">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
+
             <Button fx:id="PatientHistory" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#PatientHistory" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Patient History" textAlignment="CENTER" translateY="-1.0" wrapText="true">
+
                <font>
                   <Font name="Segoe UI" size="15.9" />
                </font>
             </Button>
+
             <Button fx:id="MedReports" alignment="CENTER" mnemonicParsing="false" onAction="#MedReports" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Med Reports" translateY="-1.0">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
@@ -44,18 +54,23 @@
                   </Button>
                </children>
             </Pane>
+
             <Button fx:id="Rooms" alignment="CENTER" mnemonicParsing="false" onAction="#Rooms" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Rooms">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
             <Button fx:id="Inventory" alignment="CENTER" mnemonicParsing="false" onAction="#Inventory" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Inventory">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
             <AnchorPane prefHeight="97.0" prefWidth="118.0" />
+
             <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
+
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
@@ -80,10 +95,12 @@
             </Label>
             <TableView fx:id="Bill_Report" layoutX="83.0" layoutY="84.0" prefHeight="524.0" prefWidth="723.0">
                <columns>
+
                   <TableColumn fx:id="BILL_NO" prefWidth="145.0" text="Bill_No" />
                   <TableColumn fx:id="ROOM_CHARGE" prefWidth="145.0" text="Room_Charges" />
                   <TableColumn fx:id="TREAT_CHARGE" prefWidth="145.0" text="Treatment_Charges" />
                   <TableColumn fx:id="MED_CHARGE" prefWidth="145.0" text="Medicine_Charges" />
+
                   <TableColumn fx:id="Net_Amount" prefWidth="139.79998779296875" text="NET_AMOUNT" />
                </columns>
             </TableView>
