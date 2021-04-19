@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.admin_report_controller">
 
    <children>
@@ -70,7 +69,7 @@
             </Button>
             <AnchorPane prefHeight="77.0" prefWidth="118.0" />
 
-            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
+            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Sign Out">
 
                <font>
                   <Font name="Segoe UI" size="16.0" />
@@ -78,35 +77,39 @@
             </Button>
          </children>
       </VBox>
-      <Pane layoutX="118.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">
+      <Pane layoutX="118.0" layoutY="49.0" prefHeight="622.0" prefWidth="889.0" style="-fx-background-color: #FFFFFF;" styleClass="inner-bg">
          <children>
-            <Label alignment="CENTER" layoutX="128.0" layoutY="8.0" prefHeight="43.0" prefWidth="537.0" text="S.O.S.A. Hospital Management System">
+            <AnchorPane prefHeight="622.0" prefWidth="890.0">
+               <children>
+                  <TableView fx:id="Med_Report" prefHeight="523.0" prefWidth="807.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+                     <columns>
+                        <TableColumn fx:id="report_no" prefWidth="107.19999694824219" text="Report_No" />
+                        <TableColumn fx:id="staff_id" prefWidth="75.2000732421875" text="Staff_ID" />
+                        <TableColumn fx:id="dis_diag" prefWidth="183.20001220703125" text="Disease Diagnosed" />
+                        <TableColumn fx:id="BP" prefWidth="68.0" text="BP" />
+                        <TableColumn fx:id="temp" prefWidth="103.199951171875" text="Temperature" />
+                        <TableColumn fx:id="weight" prefWidth="95.2000732421875" text="Weight" />
+                        <TableColumn fx:id="pulse" prefWidth="125.5999755859375" text="Pulse" />
+                        <TableColumn fx:id="patient_id" prefWidth="75.0" text="Patient_ID" />
+                     </columns>
+                  </TableView>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="195.0" styleClass="header-bg" text="Medical Reports" AnchorPane.bottomAnchor="565.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="116.0" prefHeight="51.0" prefWidth="890.0" styleClass="main-bg">
+         <children>
+            <Label alignment="CENTER" prefHeight="43.0" prefWidth="537.0" styleClass="main-bg" text="S.O.S.A. Hospital Management System" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font>
             </Label>
          </children>
-      </Pane>
-      <Pane layoutX="118.0" layoutY="49.0" prefHeight="622.0" prefWidth="889.0" style="-fx-background-color: #FFFFFF;" styleClass="inner-bg">
-         <children>
-            <TableView fx:id="Med_Report" layoutX="41.0" layoutY="58.0" prefHeight="523.0" prefWidth="807.0">
-               <columns>
-                  <TableColumn fx:id="report_no" prefWidth="107.19999694824219" text="Report_No" />
-                  <TableColumn fx:id="staff_id" prefWidth="75.2000732421875" text="Staff_ID" />
-                  <TableColumn fx:id="dis_diag" prefWidth="183.20001220703125" text="Disease Diagnosed" />
-                  <TableColumn fx:id="BP" prefWidth="68.0" text="BP" />
-                  <TableColumn fx:id="temp" prefWidth="103.199951171875" text="Temperature" />
-                  <TableColumn fx:id="weight" prefWidth="95.2000732421875" text="Weight" />
-                  <TableColumn fx:id="pulse" prefWidth="125.5999755859375" text="Pulse" />
-                  <TableColumn fx:id="patient_id" prefWidth="75.0" text="Patient_ID" />
-               </columns>
-            </TableView>
-            <Label alignment="CENTER" layoutX="347.0" layoutY="24.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Medical Reports">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
+      </AnchorPane>
    </children>
 </AnchorPane>

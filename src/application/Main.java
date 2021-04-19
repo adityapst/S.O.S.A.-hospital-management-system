@@ -1,3 +1,7 @@
+/*
+--module-path "C:\Users\Samarth Soni\Desktop\Java Projects\openjfx-16_windows-x64_bin-sdk\javafx-sdk-16\lib"
+--add-modules javafx.controls,javafx.fxml
+*/
 package application;
 	
 import javafx.application.Application;
@@ -39,4 +43,3 @@ public class Main extends Application
 		launch(args);
 	}
 }
-

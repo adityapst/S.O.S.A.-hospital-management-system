@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Room_controller">
 
    <children>
@@ -70,7 +69,7 @@
             </Button>
             <AnchorPane prefHeight="77.0" prefWidth="118.0" />
 
-            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
+            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Sign Out">
 
                <font>
                   <Font name="Segoe UI" size="16.0" />
@@ -78,32 +77,36 @@
             </Button>
          </children>
       </VBox>
-      <Pane layoutX="118.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">
+      <AnchorPane layoutX="116.0" prefHeight="51.0" prefWidth="890.0" styleClass="main-bg">
          <children>
-            <Label alignment="CENTER" layoutX="128.0" layoutY="8.0" prefHeight="43.0" prefWidth="537.0" text="S.O.S.A. Hospital Management System">
+            <Label alignment="CENTER" prefHeight="51.0" prefWidth="500.0" text="S.O.S.A. Hospital Management System" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font>
             </Label>
          </children>
-      </Pane>
-      <Pane layoutX="118.0" layoutY="58.0" prefHeight="622.0" prefWidth="898.0" style="-fx-background-color: #FFFFFF;" styleClass="inner-bg">
+      </AnchorPane>
+      <Pane layoutX="118.0" layoutY="58.0" prefHeight="611.0" prefWidth="890.0" style="-fx-background-color: #FFFFFF;" styleClass="inner-bg">
          <children>
-
-            <TableView fx:id="room" layoutX="68.0" layoutY="87.0" prefHeight="506.0" prefWidth="756.0">
-               <columns>
-                  <TableColumn fx:id="room_no" prefWidth="157.6000213623047" text="Room Number" />
-                  <TableColumn fx:id="room_type" prefWidth="276.79998779296875" text="Room Type" />
-                  <TableColumn fx:id="room_charge" prefWidth="164.00006103515625" text="Charge" />
-                  <TableColumn fx:id="max_occ" prefWidth="160.0" text="Max Occ" />
-               </columns>
-            </TableView>
-            <Label alignment="CENTER" layoutX="348.0" layoutY="48.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Rooms">
-
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
+            <AnchorPane layoutY="-8.0" prefHeight="622.0" prefWidth="890.0" styleClass="inner-bg">
+               <children>
+      
+                  <TableView fx:id="room" prefHeight="506.0" prefWidth="756.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+                     <columns>
+                        <TableColumn fx:id="room_no" prefWidth="157.6000213623047" text="Room Number" />
+                        <TableColumn fx:id="room_type" prefWidth="276.79998779296875" text="Room Type" />
+                        <TableColumn fx:id="room_charge" prefWidth="164.00006103515625" text="Charge" />
+                        <TableColumn fx:id="max_occ" prefWidth="160.0" text="Max Occ" />
+                     </columns>
+                  </TableView>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Rooms" AnchorPane.bottomAnchor="565.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="30.0">
+      
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </Pane>
    </children>

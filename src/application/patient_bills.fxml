@@ -11,11 +11,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.patient_bills_controller">
    <children>
-      <Pane layoutX="118.0" layoutY="56.0" prefHeight="615.0" prefWidth="889.0" style="-fx-background-color: #FFFFFF;">
+      <Pane layoutX="118.0" layoutY="56.0" prefHeight="615.0" prefWidth="889.0" styleClass="main-bg">
          <children>
-            <AnchorPane layoutY="-1.0" prefHeight="623.0" prefWidth="898.0" styleClass="inner-bg">
+            <AnchorPane layoutY="-7.0" prefHeight="629.0" prefWidth="898.0" styleClass="inner-bg">
                <children>
-                  <TableView fx:id="Bill_Report" layoutX="39.0" layoutY="77.0" prefHeight="524.0" prefWidth="723.0">
+                  <TableView fx:id="Bill_Report" layoutX="39.0" layoutY="77.0" prefHeight="524.0" prefWidth="723.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
                      <columns>
                         <TableColumn fx:id="BILL_NO" prefWidth="145.0" text="Bill_No" />
                         <TableColumn fx:id="ROOM_CHARGE" prefWidth="145.0" text="Room_Charge" />
@@ -24,7 +24,7 @@
                         <TableColumn fx:id="Net_Amount" prefWidth="139.199951171875" text="Net_Amount" />
                      </columns>
                   </TableView>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="297.0" layoutY="14.0" prefHeight="43.0" prefWidth="152.0" style="-fx-background-color: #000000;" text="BILLS">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="297.0" layoutY="14.0" prefHeight="43.0" prefWidth="152.0" styleClass="header-bg" text="BILLS" AnchorPane.bottomAnchor="565.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -61,21 +61,22 @@
                   <Pane layoutX="-2.0" prefHeight="51.0" prefWidth="5.0" style="-fx-background-color: #F0F0F0;" />
                </children>
             </Pane>
-            <Button fx:id="settings" alignment="CENTER" mnemonicParsing="false" onAction="#settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings" translateY="-1.0">
+            <AnchorPane prefHeight="77.0" prefWidth="118.0" />
+            <Button fx:id="settings" alignment="CENTER" mnemonicParsing="false" onAction="#settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Sign Out" translateY="-1.0">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <Pane layoutX="118.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">
+      <AnchorPane layoutX="118.0" prefHeight="51.0" prefWidth="890.0" styleClass="main-bg">
          <children>
-            <Label alignment="CENTER" layoutX="128.0" layoutY="8.0" prefHeight="43.0" prefWidth="537.0" text="S.O.S.A. Hospital Management System">
+            <Label alignment="CENTER" prefHeight="43.0" prefWidth="537.0" styleClass="main-bg" text="S.O.S.A. Hospital Management System" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font>
             </Label>
          </children>
-      </Pane>
+      </AnchorPane>
    </children>
 </AnchorPane>

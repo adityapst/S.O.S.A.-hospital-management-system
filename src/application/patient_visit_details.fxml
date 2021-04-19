@@ -12,22 +12,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.visit_details_controller">
    <children>
-      <Pane layoutX="108.0" layoutY="-3.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-color: #4778C5;">
+      <AnchorPane layoutX="116.0" prefHeight="51.0" prefWidth="890.0" styleClass="main-bg">
          <children>
-            <Label alignment="CENTER" layoutX="202.0" layoutY="8.0" prefHeight="43.0" prefWidth="537.0" text="S.O.S.A. Hospital Management System">
+            <Label alignment="CENTER" layoutX="195.0" prefHeight="50.0" prefWidth="500.0" styleClass="main-bg" text="S.O.S.A. Hospital Management System" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font>
             </Label>
          </children>
-      </Pane>
+      </AnchorPane>
       <Pane layoutX="125.0" layoutY="55.0" prefHeight="615.0" prefWidth="881.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Pane layoutX="14.0" layoutY="311.0" prefHeight="37.0" prefWidth="213.0" />
-            <Pane layoutX="28.0" layoutY="22.0" prefHeight="37.0" prefWidth="213.0" />
             <AnchorPane layoutX="-7.0" layoutY="-5.0" prefHeight="624.0" prefWidth="890.0" styleClass="inner-bg" stylesheets="@../Styling/patient_details.css">
                <children>
-                  <TableView fx:id="Pateint_In_Details" layoutX="46.0" layoutY="82.0" prefHeight="200.0" prefWidth="756.0">
+                  <TableView fx:id="Pateint_In_Details" layoutX="46.0" layoutY="82.0" prefHeight="200.0" prefWidth="756.0" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
                      <columns>
                         <TableColumn fx:id="pid" prefWidth="75.0" text="P_Id" />
                         <TableColumn fx:id="in_date" prefWidth="92.80000305175781" text="In_Date" />
@@ -40,7 +39,7 @@
                         <TableColumn fx:id="adv_pay" prefWidth="99.99993896484375" text="Adv_Payment" />
                      </columns>
                   </TableView>
-                  <TableView fx:id="Pateint_Out_Details" layoutX="46.0" layoutY="388.0" prefHeight="200.0" prefWidth="756.0">
+                  <TableView fx:id="Pateint_Out_Details" layoutX="46.0" layoutY="388.0" prefHeight="200.0" prefWidth="756.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="393.0">
                      <columns>
                         <TableColumn fx:id="pid_op" prefWidth="75.0" text="P_Id" />
                         <TableColumn fx:id="in_date_op" prefWidth="92.80000305175781" text="In_Date" />
@@ -51,17 +50,12 @@
                      </columns>
                   </TableView>
                   <Separator layoutX="74.0" layoutY="322.0" prefHeight="5.0" prefWidth="727.0" />
-                  <Label alignment="CENTER" layoutX="32.0" layoutY="36.0" prefHeight="20.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Out Visit Details">
+                  <Label alignment="CENTER" layoutX="32.0" layoutY="36.0" prefHeight="20.0" prefWidth="195.0" styleClass="header-bg" text="In Visit Details" AnchorPane.bottomAnchor="565.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="32.0" layoutY="36.0" prefHeight="20.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="In Visit Details">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="32.0" layoutY="348.0" prefHeight="20.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Out Visit Details">
+                  <Label alignment="CENTER" layoutX="340.0" layoutY="343.0" prefHeight="29.0" prefWidth="210.0" styleClass="header-bg" text="Out Visit Details" AnchorPane.bottomAnchor="252.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="343.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -98,7 +92,8 @@
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="settings" alignment="CENTER" mnemonicParsing="false" onAction="#settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings" translateY="-1.0">
+            <AnchorPane prefHeight="77.0" prefWidth="118.0" />
+            <Button fx:id="settings" alignment="CENTER" mnemonicParsing="false" onAction="#settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Sign Out" translateY="-1.0">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
