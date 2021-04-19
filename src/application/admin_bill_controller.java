@@ -23,21 +23,28 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class patient_bills_controller implements Initializable {
-	@FXML
-	private Button home;
+public class admin_bill_controller implements Initializable {
 	
 	@FXML
-	private Button visith;
+	private Button Adminhome;
 	
 	@FXML
-	private Button medrpt;
+	private Button Staff;
 	
 	@FXML
-	private Button bill;
+	private Button PatientHistory;
 	
 	@FXML
-	private Button settings;
+	private Button MedReports;
+	
+	@FXML
+	private Button Rooms;
+	
+	@FXML
+	private Button Inventory;
+	
+	@FXML
+	private Button Settings;
 	
 	@FXML
 	private TableView<Bills> Bill_Report;
@@ -57,28 +64,22 @@ public class patient_bills_controller implements Initializable {
 	@FXML
 	private TableColumn<Bills,String>Net_Amount;
 	
-	public String userId,Phone_No;
-	
-	public void showInfo(String name,String Phone) {
-		userId=name;
-		Phone_No=Phone;
-	}
-	
 	String query = null;
     Connection connection = null ;
     PreparedStatement preparedStatement = null ;
     ResultSet resultSet = null ;
     Bills bills=null;
-	
+    
     ObservableList<Bills>bills_list= FXCollections.observableArrayList();
     
-    @Override
+
+	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-    	loadDate();
+		loadDate();
+		
 	}
-    
-    private void loadDate() {
+	private void loadDate() {
     	connection=ConnectionUtil.ConDB();
     	 try {
     		 bills_list.clear();
@@ -108,93 +109,132 @@ public class patient_bills_controller implements Initializable {
     	 MED_CHARGE.setCellValueFactory(new PropertyValueFactory<Bills,String>("medicinal_charge"));
     	 Net_Amount.setCellValueFactory(new PropertyValueFactory<Bills,String>("net_amount"));
     }
+    
+	public void Adminhome(ActionEvent event) {
+		try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_home.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+	
+    public void Staff(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_staff.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+		
+	}
+    
+    public void PatientHistory(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_patient_history.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+	
+    public void MedReports(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_med_reports.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+    
+    public void Rooms(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_rooms.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+    
+    public void Inventory(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_inventory.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+	
+    public void Settings(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("settings.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
 
     
     
-	public void home(ActionEvent event) {
-		try {
-            //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
-            stage.setScene(scene);
-            stage.show();
-
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-	}
-	
-	public void visith(ActionEvent event) {
-		try {
-            //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_history.fxml")));
-            stage.setScene(scene);
-            stage.show();
-
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-	}
-	
-	public void medrpt(ActionEvent event) {
-		try {
-            //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_med_report.fxml")));
-            stage.setScene(scene);
-            stage.show();
-
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-	}
-	
-	public void bill(ActionEvent event) {
-		try {
-            //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_bills.fxml")));
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-	}
-	
-	public void settings(ActionEvent event) {
-		try {
-            //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
-            stage.setScene(scene);
-            stage.show();
-
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-	}
-
-	
+    
+    
+    
 
 }

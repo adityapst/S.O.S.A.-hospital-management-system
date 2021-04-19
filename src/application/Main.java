@@ -36,6 +36,7 @@ public class Main extends Application
 			Parent root = FXMLLoader.load(getClass().getResource("Login/Login.fxml"));
 			
 			//we gonna remove the borderless thingie.  
+<<<<<<< HEAD
 	        primaryStage.initStyle(StageStyle.DECORATED);
 	        primaryStage.setMaximized(false);
 
@@ -69,6 +70,12 @@ public class Main extends Application
 //
 //			primaryStage.setScene(scene);
 //			primaryStage.show();
+=======
+	        primaryStage.initStyle(StageStyle.UNDECORATED);
+			Scene scene = new Scene(root,900,716);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+>>>>>>> branch 'main' of https://github.com/adityapst/DBMS-hospital-management-system
 		} 
 		
 		catch(Exception e) 

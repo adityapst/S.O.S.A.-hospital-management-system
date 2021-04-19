@@ -54,15 +54,22 @@ public class LoginController implements Initializable
     	System.exit(0);
     }
     public void BtnSignin(ActionEvent event) {
-    	if (logIn().equals("Success")) {
+    	if (logIn_patient().equals("Success")) {
             try {
                 //add you loading or delays - ;-)
-                Node node = (Node) event.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
+            	
+            	FXMLLoader loader=new FXMLLoader(getClass().getResource("patient_details.fxml"));
+            	Parent root=loader.load();
+            	patient_details_controller patient_controller=loader.getController();
+            	
+                //Node node = (Node) event.getSource();
+                //Stage stage = (Stage) node.getScene().getWindow();
                 //stage.setMaximized(true);
 //                stage.close();
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
-                stage.setScene(scene);
+                //Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+                patient_controller.showInfo(txtUsername.getText(),txtPassword.getText());
+                Stage stage=new Stage();
+                stage.setScene(new Scene(root));
                 stage.show();
 
             } 
@@ -70,6 +77,30 @@ public class LoginController implements Initializable
                 System.err.println(ex.getMessage());
             }
     	} 
+    	if(logIn_Staff().equals("Success"))
+    	{
+    		try {
+                //add you loading or delays - ;-)
+            	
+            	FXMLLoader loader=new FXMLLoader(getClass().getResource("admin_home.fxml"));
+            	Parent root=loader.load();
+            	Admin_home_controller admin_controller=loader.getController();
+            	
+                //Node node = (Node) event.getSource();
+                //Stage stage = (Stage) node.getScene().getWindow();
+                //stage.setMaximized(true);
+//                stage.close();
+                //Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+//            	admin_controller.showInfo(txtUsername.getText(),txtPassword.getText());
+                Stage stage=new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } 
+            catch (IOException ex) {
+                System.err.println(ex.getMessage());
+            }
+    	}
     }
     
     
@@ -90,7 +121,7 @@ public class LoginController implements Initializable
     public LoginController() {
     	con=ConnectionUtil.ConDB();
     }
-    private String logIn() {
+    private String logIn_patient() {
     	String status="Success";
     	String userId=txtUsername.getText().toString();
     	String password=txtPassword.getText().toString();
@@ -101,7 +132,41 @@ public class LoginController implements Initializable
     	//query
     	else 
     	{
-    	   String sql="SELECT * FROM users where username= '"+userId+"' and password= '"+password+"'";
+    	   String sql="SELECT * FROM patient where p_id= "+userId+" and ph_no= '"+password+"'";
+    	   try {
+    		  preparedStatement= con.prepareStatement(sql);
+//    		  preparedStatement.setString(1, userId);
+//    		  preparedStatement.setString(2, password);
+    		  resultSet=preparedStatement.executeQuery();
+    		  if(!resultSet.next()) {
+    			  setLblError(Color.TOMATO,"Enter correct UserId/Password");
+    			  status="Error";
+    		   }
+    		   else 
+    		   {
+    			 setLblError(Color.GREEN,"Login Successful...Redirecting");
+    		   }
+    	    }
+    	    catch(Exception ex) {
+    		   System.err.println(ex.getMessage());
+    		   status="Exception";
+    	    }
+    	}
+    	return status;
+    }
+    
+    private String logIn_Staff() {
+    	String status="Success";
+    	String userId=txtUsername.getText().toString();
+    	String password=txtPassword.getText().toString();
+    	if(userId.isEmpty() || password.isEmpty()) {
+    		setLblError(Color.TOMATO,"Empty Credentials");
+    		status="Error";
+    	}
+    	//query
+    	else 
+    	{
+    	   String sql="SELECT * FROM staff where staff_id= "+userId+" and ph_no= '"+password+"'";
     	   try {
     		  preparedStatement= con.prepareStatement(sql);
 //    		  preparedStatement.setString(1, userId);

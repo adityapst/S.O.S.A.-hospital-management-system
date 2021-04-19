@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.patient_history_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/patient_details.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.visit_details_controller">
    <children>
       <Pane layoutX="108.0" layoutY="-3.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-color: #4778C5;">
          <children>
@@ -25,29 +25,29 @@
          <children>
             <Pane layoutX="14.0" layoutY="311.0" prefHeight="37.0" prefWidth="213.0" />
             <Pane layoutX="28.0" layoutY="22.0" prefHeight="37.0" prefWidth="213.0" />
-            <AnchorPane layoutX="-7.0" layoutY="-5.0" prefHeight="624.0" prefWidth="886.0" styleClass="inner-bg" stylesheets="@../Styling/patient_details.css">
+            <AnchorPane layoutX="-9.0" layoutY="-6.0" prefHeight="629.0" prefWidth="891.0" styleClass="inner-bg" stylesheets="@../Styling/patient_details.css">
                <children>
-                  <TableView layoutX="46.0" layoutY="82.0" prefHeight="200.0" prefWidth="756.0">
+                  <TableView fx:id="Pateint_In_Details" layoutX="46.0" layoutY="82.0" prefHeight="200.0" prefWidth="756.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="P_Id" />
-                        <TableColumn prefWidth="92.80000305175781" text="In_Date" />
-                        <TableColumn prefWidth="79.199951171875" text="Report_No" />
-                        <TableColumn prefWidth="64.79998779296875" text="Bill_No" />
-                        <TableColumn prefWidth="79.199951171875" text="Room_No" />
-                        <TableColumn prefWidth="80.79998779296875" text="Out_Date" />
-                        <TableColumn prefWidth="92.79998779296875" text="Treatment" />
-                        <TableColumn prefWidth="89.5999755859375" text="Prescription" />
-                        <TableColumn prefWidth="99.99993896484375" text="Adv_Payment" />
+                        <TableColumn fx:id="pid" prefWidth="75.0" text="P_Id" />
+                        <TableColumn fx:id="in_date" prefWidth="92.80000305175781" text="In_Date" />
+                        <TableColumn fx:id="out_date" prefWidth="80.79998779296875" text="Out_Date" />
+                        <TableColumn fx:id="room_no" prefWidth="79.199951171875" text="Room_No" />
+                        <TableColumn fx:id="report_no" prefWidth="79.199951171875" text="Report_No" />
+                        <TableColumn fx:id="bill_no" prefWidth="64.79998779296875" text="Bill_No" />
+                        <TableColumn fx:id="treatment" prefWidth="92.79998779296875" text="Treatment" />
+                        <TableColumn fx:id="presc" prefWidth="89.5999755859375" text="Prescription" />
+                        <TableColumn fx:id="adv_pay" prefWidth="99.99993896484375" text="Adv_Payment" />
                      </columns>
                   </TableView>
-                  <TableView layoutX="46.0" layoutY="388.0" prefHeight="200.0" prefWidth="756.0">
+                  <TableView fx:id="Pateint_Out_Details" layoutX="46.0" layoutY="388.0" prefHeight="200.0" prefWidth="756.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="P_Id" />
-                        <TableColumn prefWidth="92.80000305175781" text="In_Date" />
-                        <TableColumn prefWidth="79.199951171875" text="Report_No" />
-                        <TableColumn prefWidth="64.79998779296875" text="Bill_No" />
-                        <TableColumn prefWidth="92.79998779296875" text="Treatment" />
-                        <TableColumn prefWidth="89.5999755859375" text="Prescription" />
+                        <TableColumn fx:id="pid_op" prefWidth="75.0" text="P_Id" />
+                        <TableColumn fx:id="in_date_op" prefWidth="92.80000305175781" text="In_Date" />
+                        <TableColumn fx:id="report_no_op" prefWidth="163.199951171875" text="Report_No" />
+                        <TableColumn fx:id="bill_no_op" prefWidth="103.20001220703125" text="Bill_No" />
+                        <TableColumn fx:id="treatment_op" prefWidth="147.19989013671875" text="Treatment" />
+                        <TableColumn fx:id="presc_op" prefWidth="173.60003662109375" text="Prescription" />
                      </columns>
                   </TableView>
                   <Separator layoutX="74.0" layoutY="322.0" prefHeight="5.0" prefWidth="727.0" />

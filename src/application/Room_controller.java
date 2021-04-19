@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
 import Utils.ConnectionUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,111 +23,94 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class med_report_controller implements Initializable {
-	@FXML
-	private Button home;
+public class Room_controller implements Initializable {
 	
 	@FXML
-	private Button visith;
+	private Button Adminhome;
 	
 	@FXML
-	private Button medrpt;
+	private Button Bills;
 	
 	@FXML
-	private Button bill;
+	private Button PatientHistory;
 	
 	@FXML
-	private Button settings;
+	private Button MedReports;
 	
 	@FXML
-	private TableView<med_report> Med_Report;
+	private Button Staff;
 	
 	@FXML
-	private TableColumn<med_report,String>staff_id;
+	private Button Inventory;
 	
 	@FXML
-	private TableColumn<med_report,String>dis_diag;
+	private Button Settings;
 	
 	@FXML
-	private TableColumn<med_report,String>BP;
+	private TableView<Room> room;
 	
 	@FXML
-	private TableColumn<med_report,String>temp;
+	private TableColumn<Room,String>room_no;
 	
 	@FXML
-	private TableColumn<med_report,String>report_no;
+	private TableColumn<Room,String>room_type;
 	
 	@FXML
-	private TableColumn<med_report,String>weight;
+	private TableColumn<Room,String>room_charge;
 	
 	@FXML
-	private TableColumn<med_report,String>pulse;
-	
-   public String userId,Phone_No;
-	
-	public void showInfo(String name,String Phone) {
-		userId=name;
-		Phone_No=Phone;
-	}
+	private TableColumn<Room,String>max_occ;
 	
 	String query = null;
     Connection connection = null ;
     PreparedStatement preparedStatement = null ;
     ResultSet resultSet = null ;
-    med_report report=null;
+    Room room_obj=null;
     
-    ObservableList<med_report>report_list= FXCollections.observableArrayList();
+    ObservableList<Room>Room_list= FXCollections.observableArrayList();
     
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-    	loadDate();
+		loadDate();		
 	}
     
     private void loadDate() {
     	connection=ConnectionUtil.ConDB();
     	 try {
-    		 report_list.clear();
+    		 Room_list.clear();
              
-             query = "SELECT * FROM med_rep";
+             query = "SELECT * FROM room";
              preparedStatement = connection.prepareStatement(query);
              resultSet = preparedStatement.executeQuery();
              
              while (resultSet.next()){
-            	 boolean add=report_list.add(new  med_report(
-                         resultSet.getInt("report_no"),
-                         resultSet.getInt("staff_id"),
-                         resultSet.getString("dis_diag"),
-                         resultSet.getString("BP"),
-                         resultSet.getInt("temp"),
-                         resultSet.getInt("weight"),
-                         resultSet.getInt("pulse")));
-            	 Med_Report.setItems(report_list);
-                 
+            	 boolean add=Room_list.add(new  Room(
+                         resultSet.getInt("room_no"),
+                         resultSet.getString("room_type"),
+                         resultSet.getInt("charge"),
+                         resultSet.getInt("max_occ")));
              }
-             
+        	 room.setItems(Room_list); 
              
          } catch (SQLException ex) {
         	 System.out.println("Error");
 //             Logger.getLogger(med_report_controller.class.getName()).log(Level.SEVERE, null, ex);
          }
-    	report_no.setCellValueFactory(new PropertyValueFactory<>("report_no"));
-     	staff_id.setCellValueFactory(new PropertyValueFactory<>("staff_id"));
-     	weight.setCellValueFactory(new PropertyValueFactory<>("weight"));
-     	pulse.setCellValueFactory(new PropertyValueFactory<>("pulse"));
-     	dis_diag.setCellValueFactory(new PropertyValueFactory<>("dis_diag"));
-     	BP.setCellValueFactory(new PropertyValueFactory<>("BP"));
-     	temp.setCellValueFactory(new PropertyValueFactory<>("temp"));
+    	 room_no.setCellValueFactory(new PropertyValueFactory<>("room_no"));
+    	 room_type.setCellValueFactory(new PropertyValueFactory<>("room_type"));
+    	 room_charge.setCellValueFactory(new PropertyValueFactory<>("room_charge"));
+    	 max_occ.setCellValueFactory(new PropertyValueFactory<>("max_occ"));
     }
-	
-	public void home(ActionEvent event) {
+    
+    public void Adminhome(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_home.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -136,14 +120,32 @@ public class med_report_controller implements Initializable {
         }
 	}
 	
-	public void visith(ActionEvent event) {
-		try {
+    public void Bills(ActionEvent event) {
+    	try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_history.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_bills.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+		
+	}
+    
+    public void PatientHistory(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_patient_history.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -153,14 +155,48 @@ public class med_report_controller implements Initializable {
         }
 	}
 	
-	public void medrpt(ActionEvent event) {
-		try {
+    public void MedReports(ActionEvent event) {
+    	try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_med_report.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_med_reports.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+    
+    public void Staff(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_staff.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+    
+    public void Inventory(ActionEvent event) {
+    	try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("admin_inventory.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -170,30 +206,14 @@ public class med_report_controller implements Initializable {
         }
 	}
 	
-	public void bill(ActionEvent event) {
-		try {
+    public void Settings(ActionEvent event) {
+    	try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_bills.fxml")));
-            stage.setScene(scene);
-            stage.show();
-        } 
-        catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-	}
-	
-	public void settings(ActionEvent event) {
-		try {
-            //add you loading or delays - ;-)
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //stage.setMaximized(true);
-//            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("settings.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -201,8 +221,5 @@ public class med_report_controller implements Initializable {
         catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
-	}
-
-	
-
+    }
 }
