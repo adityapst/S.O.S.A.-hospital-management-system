@@ -29,25 +29,24 @@
                <children>
                   <TableView fx:id="Pateint_In_Details" layoutX="46.0" layoutY="82.0" prefHeight="200.0" prefWidth="756.0">
                      <columns>
-                        <TableColumn fx:id="pid" prefWidth="75.0" text="P_Id" />
-                        <TableColumn fx:id="in_date" prefWidth="92.80000305175781" text="In_Date" />
-                        <TableColumn fx:id="out_date" prefWidth="80.79998779296875" text="Out_Date" />
-                        <TableColumn fx:id="room_no" prefWidth="79.199951171875" text="Room_No" />
-                        <TableColumn fx:id="report_no" prefWidth="79.199951171875" text="Report_No" />
-                        <TableColumn fx:id="bill_no" prefWidth="64.79998779296875" text="Bill_No" />
-                        <TableColumn fx:id="treatment" prefWidth="92.79998779296875" text="Treatment" />
-                        <TableColumn fx:id="presc" prefWidth="89.5999755859375" text="Prescription" />
-                        <TableColumn fx:id="adv_pay" prefWidth="99.99993896484375" text="Adv_Payment" />
+                        <TableColumn fx:id="pid" prefWidth="55.199981689453125" text="P_Id" />
+                        <TableColumn fx:id="in_date" prefWidth="82.40003967285156" text="In_Date" />
+                        <TableColumn fx:id="out_date" prefWidth="84.0" text="Out_Date" />
+                        <TableColumn fx:id="room_no" prefWidth="82.4000244140625" text="Room_No" />
+                        <TableColumn fx:id="report_no" prefWidth="85.60003662109375" text="Report_No" />
+                        <TableColumn fx:id="bill_no" prefWidth="74.4000244140625" text="Bill_No" />
+                        <TableColumn fx:id="treatment" prefWidth="145.5999755859375" text="Treatment" />
+                        <TableColumn fx:id="presc" prefWidth="148.800048828125" text="Prescription" />
                      </columns>
                   </TableView>
                   <TableView fx:id="Pateint_Out_Details" layoutX="46.0" layoutY="388.0" prefHeight="200.0" prefWidth="756.0">
                      <columns>
-                        <TableColumn fx:id="pid_op" prefWidth="75.0" text="P_Id" />
-                        <TableColumn fx:id="in_date_op" prefWidth="92.80000305175781" text="In_Date" />
-                        <TableColumn fx:id="report_no_op" prefWidth="163.199951171875" text="Report_No" />
-                        <TableColumn fx:id="bill_no_op" prefWidth="103.20001220703125" text="Bill_No" />
-                        <TableColumn fx:id="treatment_op" prefWidth="147.19989013671875" text="Treatment" />
-                        <TableColumn fx:id="presc_op" prefWidth="173.60003662109375" text="Prescription" />
+                        <TableColumn fx:id="pid_op" prefWidth="55.199981689453125" text="P_Id" />
+                        <TableColumn fx:id="in_date_op" prefWidth="88.00001525878906" text="In_Date" />
+                        <TableColumn fx:id="report_no_op" prefWidth="106.4000244140625" text="Report_No" />
+                        <TableColumn fx:id="bill_no_op" prefWidth="106.4000244140625" text="Bill_No" />
+                        <TableColumn fx:id="treatment_op" prefWidth="200.800048828125" text="Treatment" />
+                        <TableColumn fx:id="presc_op" prefWidth="202.39990234375" text="Prescription" />
                      </columns>
                   </TableView>
                   <Separator layoutX="74.0" layoutY="322.0" prefHeight="5.0" prefWidth="727.0" />
@@ -94,11 +93,6 @@
                </font>
             </Button>
             <Button fx:id="bill" alignment="CENTER" mnemonicParsing="false" onAction="#bill" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Bills" translateY="-1.0">
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font>
-            </Button>
-            <Button fx:id="settings" alignment="CENTER" mnemonicParsing="false" onAction="#settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings" translateY="-1.0">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>

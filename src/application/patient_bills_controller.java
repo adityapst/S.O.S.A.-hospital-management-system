@@ -81,7 +81,7 @@ public class patient_bills_controller implements Initializable {
     	 try {
     		 bills_list.clear();
              
-             query = "SELECT * FROM BILL B,IN_PAT I,OUT_PAT O where B.BILL_NO=I.BILL_NO AND B.BILL_NO=O.BILL_NO AND I.PID="+userId+" AND O.PID="+userId;
+             query = "SELECT UNIQUE B.BILL_NO,B.ROOM_CHARGE,B.TREAT_CHARGE,B.MED_CHARGE,NET_AMT FROM BILL B,IN_PAT I,OUT_PAT O where (B.BILL_NO=I.BILL_NO and I.PID="+userId+") OR (O.BILL_NO=B.BILL_NO AND O.PID="+userId+")";
              preparedStatement = connection.prepareStatement(query);
              resultSet = preparedStatement.executeQuery();
              

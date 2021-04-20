@@ -22,8 +22,8 @@ public class Main extends Application
 			Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
 			
 			//we gonna remove the borderless thingie.  
-	        primaryStage.initStyle(StageStyle.UNDECORATED);
-			Scene scene = new Scene(root,900,716);
+	        primaryStage.initStyle(StageStyle.DECORATED);
+			Scene scene = new Scene(root,990,730);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} 

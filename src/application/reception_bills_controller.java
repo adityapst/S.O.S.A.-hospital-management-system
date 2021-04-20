@@ -6,8 +6,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import Utils.ConnectionUtil;
@@ -96,6 +98,7 @@ public class reception_bills_controller implements Initializable  {
         		 nw=resultSet.getInt("Max(BILL_NO)");
         	 }
         	 nw++;
+//        	 System.out.println("Line 99");
         	 PreparedStatement st= connection.prepareStatement("INSERT INTO bill (BILL_NO,ROOM_CHARGE,TREAT_CHARGE,MED_CHARGE,NET_AMT) values(?,?,?,?,?)");
         	 st.setInt(1,nw);
 //        	 st.setInt(2,reportno);
@@ -104,23 +107,34 @@ public class reception_bills_controller implements Initializable  {
         	 st.setInt(4,medcharge);
         	 st.setInt(5,total);
         	 int res=st.executeUpdate();
+//        	 System.out.println("Line 108");
         	 st=connection.prepareStatement("UPDATE IN_PAT SET BILL_NO="+nw+" WHERE REPORT_NO="+reportno);
         	 res=st.executeUpdate();
+//        	 System.out.println("Line 111");
         	 if(res<=0) {
         		 st=connection.prepareStatement("UPDATE OUT_PAT SET BILL_NO="+nw+" WHERE REPORT_NO="+reportno);
         		 res=st.executeUpdate();
+//        		 System.out.println("Line 114");
         	 }
-        	 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");  
-        	 LocalDateTime now = LocalDateTime.now(); 
+        	  Date date = new Date();  
+        	  SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");  
+        	  String strDate= formatter.format(date);  
         	l1.setText(String.valueOf(nw));
-        	
-        	st= connection.prepareStatement("UPDATE IN_PAT SET BILL NO="+nw+" where REPORT_NO="+Integer.parseInt(l2.getText()));
+        	System.out.println("UPDATE IN_PAT SET BILL NO="+nw+" where REPORT_NO="+l2.getText());
+        	st= connection.prepareStatement("UPDATE IN_PAT SET BILL_NO="+nw+" where REPORT_NO="+l2.getText());
         	preparedStatement = connection.prepareStatement(query);
+//        	System.out.println("Line 122");
         	res=st.executeUpdate();
-        	st= connection.prepareStatement("UPDATE IN_PAT SET OUT_DATE='20-APR-2021' where REPORT_NO="+l2.getText());
+//        	System.out.println("Line 124");
+        	st= connection.prepareStatement("UPDATE IN_PAT SET OUT_DATE='"+strDate+"' where REPORT_NO="+l2.getText());
+//        	System.out.println("Line 126");
         	res=st.executeUpdate();
+//        	System.out.println("Line 128");
+        	System.out.println("UPDATE IN_PAT SET BILL NO="+nw+" where REPORT_NO="+l2.getText());
 		} catch (SQLException e) {
+//			System.out.println("UPDATE IN_PAT SET BILL NO="+nw+" where REPORT_NO="+l2.getText());
 			// TODO Auto-generated catch block
+//			System.out.println("Line 133");
 			e.printStackTrace();
 		}
 	}
