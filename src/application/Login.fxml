@@ -11,19 +11,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="979.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
 	<children>
-		<Label fx:id="btnForgot" alignment="CENTER" layoutX="565.0" layoutY="384.0" prefHeight="28.0" prefWidth="154.0" text="Forgot Password" textFill="#5383ff">
-			<font>
-				<Font name="Segoe UI" size="14.0" />
-			</font>
-		</Label>
-		<AnchorPane prefHeight="716.0" prefWidth="407.0" style="-fx-background-color: #0c39ff;">
+		<AnchorPane prefHeight="716.0" prefWidth="400.0" style="-fx-background-color: #0c39ff;">
 			<children>
 				<ImageView fitHeight="100.0" fitWidth="112.0" layoutX="154.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
 					<image>
 						<Image url="@../Images/hospital.png" />
 					</image>
 				</ImageView>
-				<Label alignment="CENTER" layoutX="64.0" layoutY="334.0" prefHeight="23.0" prefWidth="335.0" text="S.O.S.A. Hospital Management System" textFill="WHITE">
+				<Label alignment="CENTER" layoutX="36.0" layoutY="334.0" prefHeight="23.0" prefWidth="335.0" text="S.O.S.A. Hospital Management System" textFill="WHITE">
 					<font>
 						<Font name="Segoe UI Bold" size="18.0" />
 					</font>

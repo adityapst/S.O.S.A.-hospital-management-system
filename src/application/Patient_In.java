@@ -7,13 +7,12 @@ public class Patient_In {
 	Date in_date,out_date;
 	String treatment,presc;
 	public Patient_In(int pid, Date in_date, int report_no, int bill_no,int room_no,Date out_date,
-			String treatment, String presc, int adv_pay) {
+			String treatment, String presc) {
 		super();
 		this.pid = pid;
 		this.room_no = room_no;
 		this.report_no = report_no;
 		this.bill_no = bill_no;
-		this.adv_pay = adv_pay;
 		this.in_date = in_date;
 		this.out_date = out_date;
 		this.treatment = treatment;
@@ -51,15 +50,6 @@ public class Patient_In {
 	public void setBill_no(int bill_no) {
 		this.bill_no = bill_no;
 	}
-	
-	public int getAdv_pay() {
-		return adv_pay;
-	}
-	
-	public void setAdv_pay(int adv_pay) {
-		this.adv_pay = adv_pay;
-	}
-	
 	public Date getIn_date() {
 		return in_date;
 	}

@@ -12,8 +12,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 public class Add_Item_Controller implements Initializable  {
 	
@@ -31,6 +33,12 @@ public class Add_Item_Controller implements Initializable  {
 	
 	@FXML
 	private TextField Qty;
+	
+	@FXML
+	private Button remove;
+	
+	@FXML
+	private Label Addnew;
 	
 	String query = null;
     Connection connection = null ;
@@ -60,6 +68,25 @@ public class Add_Item_Controller implements Initializable  {
 			e.printStackTrace();
 		}
 	}
+	public void remove(ActionEvent event) {
+		connection=ConnectionUtil.ConDB();
+		try {
+	       	 int nw=Integer.parseInt(Goodsid.getText());
+	       	 PreparedStatement st= connection.prepareStatement("DELETE STAFF WHERE INVENTORY WHERE GOODS_ID="+nw);
+				int res=st.executeUpdate();
+				if(res>0) {
+					setAddnew(Color.GREEN,"Item Deleted !!");
+				}
+				else setAddnew(Color.TOMATO,"Something Went Wrong :/");
+//				Staff_Id.clear();
+//		    	Staff_controller stff=new Staff_controller(); 
+//		    	stff.loadDate();	
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				setAddnew(Color.TOMATO,"Error Ocuured");
+				e.printStackTrace();
+			}
+	}
 	public void edit(ActionEvent event) {
 		connection=ConnectionUtil.ConDB();
         try {
@@ -80,4 +107,11 @@ public class Add_Item_Controller implements Initializable  {
 			e.printStackTrace();
 		}
 	}
+	
+	private void setAddnew(Color color,String text) {
+    	Addnew.setTextFill(color);
+    	Addnew.setText(text);
+    	System.out.println(text);
+    }
+	
 }

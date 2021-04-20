@@ -12,7 +12,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 public class Add_Staff_Controller implements Initializable {
 	@FXML
@@ -20,6 +22,9 @@ public class Add_Staff_Controller implements Initializable {
 	
 	@FXML
 	private Button reset;
+	
+	@FXML
+	private Button remove;
 	
 	@FXML
 	private TextField Staff_Id;
@@ -41,6 +46,9 @@ public class Add_Staff_Controller implements Initializable {
 	
 	@FXML
 	private TextField Dept;
+	
+	@FXML
+	private Label Addnew;
 	
 	String query = null;
     Connection connection = null ;
@@ -78,11 +86,13 @@ public class Add_Staff_Controller implements Initializable {
 			st.setString(7,dp);
 			int res=st.executeUpdate();
 			Staff_Id.setText(String.valueOf(nw));
+			setAddnew(Color.GREEN,"Staff Added !!");
 //			Staff_Id.clear();
 //	    	Staff_controller stff=new Staff_controller(); 
 //	    	stff.loadDate();	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			setAddnew(Color.TOMATO,"Error Ocuured");
 			e.printStackTrace();
 		}
 	}
@@ -96,5 +106,31 @@ public class Add_Staff_Controller implements Initializable {
     	Ph_No.clear();
     	Desig.clear();
     	Dept.clear();
+    }
+    
+    public void remove(ActionEvent event) {
+    	connection=ConnectionUtil.ConDB();
+    	try {
+       	 int nw=Integer.parseInt(Staff_Id.getText());
+       	 PreparedStatement st= connection.prepareStatement("DELETE STAFF WHERE STAFF_ID="+nw);
+			int res=st.executeUpdate();
+			if(res>0) {
+				setAddnew(Color.GREEN,"Staff Deleted !!");
+			}
+			else setAddnew(Color.TOMATO,"Something Went Wrong !!");
+//			Staff_Id.clear();
+//	    	Staff_controller stff=new Staff_controller(); 
+//	    	stff.loadDate();	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			setAddnew(Color.TOMATO,"Error Ocuured");
+			e.printStackTrace();
+		}
+    	
+    }
+    private void setAddnew(Color color,String text) {
+    	Addnew.setTextFill(color);
+    	Addnew.setText(text);
+    	System.out.println(text);
     }
 }

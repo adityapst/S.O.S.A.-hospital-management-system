@@ -51,6 +51,12 @@ public class Staff_controller implements Initializable  {
 	private Button add_new;
 	
 	@FXML
+	private Button refresh;
+	
+	@FXML
+	private Button remove;
+	
+	@FXML
 	private TableView<Staff> staff;
 	
 	@FXML
@@ -122,6 +128,10 @@ public class Staff_controller implements Initializable  {
     	 ph_no.setCellValueFactory(new PropertyValueFactory<>("ph_no"));
     	 desig.setCellValueFactory(new PropertyValueFactory<>("desig"));
     	 dept.setCellValueFactory(new PropertyValueFactory<>("dept"));
+    }
+    
+    public void refresh(ActionEvent event ) {
+    	loadDate();
     }
     
     public void add(ActionEvent event) {

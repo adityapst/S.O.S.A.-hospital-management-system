@@ -30,6 +30,9 @@ public class Inventory_Controller implements Initializable {
 	private Button Adminhome;
 	
 	@FXML
+	private Button refresh;
+	
+	@FXML
 	private Button Staff;
 	
 	@FXML
@@ -102,6 +105,10 @@ public class Inventory_Controller implements Initializable {
     	 p_name.setCellValueFactory(new PropertyValueFactory<>("p_Name"));
     	 qty.setCellValueFactory(new PropertyValueFactory<>("qty"));
     }
+	
+	public void  refresh(ActionEvent event) {
+		loadDate();
+	}
 	
 	public void Adminhome(ActionEvent event) {
 		try {

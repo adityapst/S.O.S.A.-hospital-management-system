@@ -23,6 +23,11 @@
                   <Font name="Segoe UI" size="16.0" />
                </font>
             </Button>
+            <Button fx:id="AddPatient" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#AddPatient" prefHeight="61.0" prefWidth="118.0" styleClass="button-left" text="Add Patient Details" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI" size="15.9" />
+               </font>
+            </Button>
             <Pane prefHeight="51.0" prefWidth="118.0" style="-fx-background-color: #293950;">
                <children>
                   <Pane layoutX="-2.0" prefHeight="51.0" prefWidth="5.0" style="-fx-background-color: #F0F0F0;" />

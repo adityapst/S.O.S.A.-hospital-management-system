@@ -107,7 +107,8 @@
                </font>
             </Label>
 
-            <Button fx:id="add_new" layoutX="78.0" layoutY="57.0" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Add New Staff" />
+            <Button fx:id="add_new" layoutX="78.0" layoutY="57.0" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="184.0" styleClass="button-form" text="Add/Remove New Staff" />
+            <Button fx:id="refresh" layoutX="684.0" layoutY="57.0" mnemonicParsing="false" onAction="#refresh" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Refresh" />
 
          </children>
       </Pane>

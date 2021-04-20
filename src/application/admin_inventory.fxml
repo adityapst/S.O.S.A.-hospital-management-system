@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Inventory_Controller">
 
    <children>
@@ -104,7 +103,8 @@
                </font>
             </Label>
 
-            <Button fx:id="add" layoutX="67.0" layoutY="37.0" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Add/Edit Item" />
+            <Button fx:id="add" layoutX="67.0" layoutY="37.0" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="163.0" styleClass="button-form" text="Add/Edit/Remove Item" />
+            <Button fx:id="refresh" layoutX="663.0" layoutY="37.0" mnemonicParsing="false" onAction="#refresh" prefHeight="40.0" prefWidth="150.0" styleClass="button-form" text="Refresh" />
 
          </children>
       </Pane>

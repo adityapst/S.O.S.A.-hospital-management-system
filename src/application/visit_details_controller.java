@@ -69,9 +69,6 @@ public class visit_details_controller implements Initializable {
 	@FXML
 	private TableColumn<Patient_In,String>presc;
 	
-	@FXML
-	private TableColumn<Patient_In,String>adv_pay;
-	
 	
 	// Out Patient
 	@FXML
@@ -137,8 +134,7 @@ public class visit_details_controller implements Initializable {
                        resultSet.getInt("ROOM_NO"),
                        resultSet.getDate("OUT_DATE"),
                        resultSet.getString("TREAT"),
-                       resultSet.getString("PRESC"),
-                       resultSet.getInt("ADV_PAY")));
+                       resultSet.getString("PRESC")));
             	 
                  
              }
@@ -157,7 +153,7 @@ public class visit_details_controller implements Initializable {
     	 out_date.setCellValueFactory(new PropertyValueFactory<>("out_date"));
     	 treatment.setCellValueFactory(new PropertyValueFactory<>("treatment"));
     	 presc.setCellValueFactory(new PropertyValueFactory<>("presc"));
-    	 adv_pay.setCellValueFactory(new PropertyValueFactory<>("adv_pay"));
+
     }
     
     private void loadDate_Out() {

@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.admin_VisitDetails_controller">
 
    <children>
@@ -99,11 +98,10 @@
                   <TableColumn fx:id="in_date" prefWidth="92.80000305175781" text="In_Date" />
                   <TableColumn fx:id="out_date" prefWidth="80.79998779296875" text="Out_Date" />
                   <TableColumn fx:id="room_no" prefWidth="79.199951171875" text="Room_No" />
-                  <TableColumn fx:id="report_no" prefWidth="79.199951171875" text="Report_No" />
-                  <TableColumn fx:id="bill_no" prefWidth="64.79998779296875" text="Bill_No" />
-                  <TableColumn fx:id="treatment" prefWidth="92.79998779296875" text="Treatment" />
-                  <TableColumn fx:id="presc" prefWidth="89.5999755859375" text="Prescription" />
-                  <TableColumn fx:id="adv_pay" prefWidth="99.99993896484375" text="Adv_Payment" />
+                  <TableColumn fx:id="report_no" prefWidth="106.39996337890625" text="Report_No" />
+                  <TableColumn fx:id="bill_no" prefWidth="83.2000732421875" text="Bill_No" />
+                  <TableColumn fx:id="treatment" prefWidth="93.5999755859375" text="Treatment" />
+                  <TableColumn fx:id="presc" prefWidth="144.7999267578125" text="Prescription" />
                </columns>
             </TableView>
             <TableView fx:id="Pateint_Out_Details" layoutX="74.0" layoutY="398.0" prefHeight="200.0" prefWidth="756.0">

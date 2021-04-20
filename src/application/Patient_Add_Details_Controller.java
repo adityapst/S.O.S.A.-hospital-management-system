@@ -6,8 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import Utils.ConnectionUtil;
@@ -21,31 +19,31 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class reception_bills_controller implements Initializable  {
+public class Patient_Add_Details_Controller implements Initializable  {
 	
 	@FXML
-	private TextField l1;
-	
-	@FXML
-	private TextField l2;
-	
-	@FXML
-	private TextField l3;
-	
-	@FXML
-	private TextField l4;
-	
-	@FXML
-	private TextField l5;
-	
-	@FXML
-	private TextField l6;
+	private Button save;
 	
 	@FXML
 	private Button reset;
 	
 	@FXML
-	private Button save;
+	private TextField P_ID;
+	
+	@FXML
+	private TextField NAME;
+	
+	@FXML
+	private TextField DOB;
+	
+	@FXML
+	private TextField BLOOD_GRP;
+	
+	@FXML
+	private TextField GENDER;
+	
+	@FXML
+	private TextField  PH_NO;
 	
 	@FXML
 	private Button ReceptionHome;
@@ -63,62 +61,47 @@ public class reception_bills_controller implements Initializable  {
 	private Button settings;
 	
 	@FXML
-	private Button AddPatient;
-	
-	
-	int userId;
-	public String Phone_No;
+	private Button Bills;
+
 	
 	String query = null;
     Connection connection = null ;
     PreparedStatement preparedStatement = null ;
-
+    
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		userId=CurrentStatus.getCs().getStaff_id();
-		Phone_No=CurrentStatus.getCs().getPh_no();
+		
 	}
 	
 	public void save(ActionEvent event) {
 		connection=ConnectionUtil.ConDB();
         try {
-        	 int reportno=Integer.parseInt(l2.getText());
-        	 int roomcharge=Integer.parseInt(l3.getText());
-        	 int treatcharge=Integer.parseInt(l4.getText());
-        	 int medcharge=Integer.parseInt(l5.getText());
-        	 int total=roomcharge+treatcharge+medcharge;
-        	 query="SELECT MAX(BILL_NO) FROM BILL";
+        	 query="SELECT MAX(P_ID) FROM PATIENT";
         	 preparedStatement = connection.prepareStatement(query);
         	 ResultSet resultSet = preparedStatement.executeQuery();
         	 int nw=0;
         	 while(resultSet.next()) {
-        		 nw=resultSet.getInt("Max(BILL_NO)");
+        		 nw=resultSet.getInt("Max(P_ID)");
         	 }
-        	 nw++;
-        	 PreparedStatement st= connection.prepareStatement("INSERT INTO bill (BILL_NO,ROOM_CHARGE,TREAT_CHARGE,MED_CHARGE,NET_AMT) values(?,?,?,?,?)");
-        	 st.setInt(1,nw);
-//        	 st.setInt(2,reportno);
-        	 st.setInt(2,roomcharge);
-        	 st.setInt(3,treatcharge);
-        	 st.setInt(4,medcharge);
-        	 st.setInt(5,total);
-        	 int res=st.executeUpdate();
-        	 st=connection.prepareStatement("UPDATE IN_PAT SET BILL_NO="+nw+" WHERE REPORT_NO="+reportno);
-        	 res=st.executeUpdate();
-        	 if(res<=0) {
-        		 st=connection.prepareStatement("UPDATE OUT_PAT SET BILL_NO="+nw+" WHERE REPORT_NO="+reportno);
-        		 res=st.executeUpdate();
-        	 }
-        	 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");  
-        	 LocalDateTime now = LocalDateTime.now(); 
-        	l1.setText(String.valueOf(nw));
-        	
-        	st= connection.prepareStatement("UPDATE IN_PAT SET BILL NO="+nw+" where REPORT_NO="+Integer.parseInt(l2.getText()));
-        	preparedStatement = connection.prepareStatement(query);
-        	res=st.executeUpdate();
-        	st= connection.prepareStatement("UPDATE IN_PAT SET OUT_DATE='20-APR-2021' where REPORT_NO="+l2.getText());
-        	res=st.executeUpdate();
+			PreparedStatement st= connection.prepareStatement("INSERT INTO PATIENT (P_ID,NAME,DOB, BLOOD_GRP,GENDER,PH_NO) values(?,?,?,?,?,?)");
+			String s=NAME.getText();
+			String d=DOB.getText();
+			String bp=BLOOD_GRP.getText();
+			String gen=GENDER.getText();
+			String gn=PH_NO.getText();
+			nw++;
+			st.setInt(1,nw);
+			st.setString(2,s);
+			st.setString(3,d);
+			st.setString(4,bp);
+			st.setString(5,gen);
+			st.setString(6,gn);
+			int res=st.executeUpdate();
+			P_ID.setText(String.valueOf(nw));
+//			Staff_Id.clear();
+//	    	Staff_controller stff=new Staff_controller(); 
+//	    	stff.loadDate();	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -126,13 +109,13 @@ public class reception_bills_controller implements Initializable  {
 	}
 	
 	public void reset(ActionEvent event) {
-		l1.clear();
- 		l2.clear();
- 		l3.clear();
- 		l4.clear();
- 		l5.clear();
- 		l6.clear();
-	}
+		P_ID.clear();
+    	DOB.clear();
+    	NAME.clear();
+    	BLOOD_GRP.clear();
+    	GENDER.clear();
+    	PH_NO.clear();
+    }
 	
 	public void ReceptionHome(ActionEvent event) {
 		try {
@@ -219,14 +202,14 @@ public class reception_bills_controller implements Initializable  {
         }
 	}
 	
-	public void AddPatient(ActionEvent event) {
+	public void Bills(ActionEvent event) {
 		try {
             //add you loading or delays - ;-)
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             //stage.setMaximized(true);
 //            stage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("reception_add_patient_details.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("reception_bills.fxml")));
             stage.setScene(scene);
             stage.show();
 
@@ -235,4 +218,7 @@ public class reception_bills_controller implements Initializable  {
             System.err.println(ex.getMessage());
         }
 	}
+	
+	
+
 }

@@ -68,6 +68,9 @@ public class reception_inpatient_controller implements Initializable {
 	@FXML
 	private Button settings;
 	
+	@FXML
+	private Button AddPatient;
+	
 	
 	String query = null;
     Connection connection = null ;
@@ -210,4 +213,23 @@ public class reception_inpatient_controller implements Initializable {
             System.err.println(ex.getMessage());
         }
 	}
+	
+	public void AddPatient(ActionEvent event) {
+		try {
+            //add you loading or delays - ;-)
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            //stage.setMaximized(true);
+//            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("reception_add_patient_details.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        } 
+        catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+	}
+	
+	
 }
