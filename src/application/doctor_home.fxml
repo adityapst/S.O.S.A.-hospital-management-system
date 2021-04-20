@@ -47,11 +47,6 @@
                </children>
             </Pane>
             <AnchorPane prefHeight="216.0" prefWidth="118.0" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
       <Pane layoutX="118.0" prefHeight="58.0" prefWidth="890.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">
@@ -93,13 +88,13 @@
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Staff_ID" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Department" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
                   <Label alignment="CENTER" prefHeight="31.0" prefWidth="75.0" text="Designation" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                  <Label fx:id="Staff_id" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Label fx:id="DOB" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Label fx:id="Staff_name" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Label fx:id="salary" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Label fx:id="phone_no" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <Label fx:id="desg" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                  <Label fx:id="dept" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Label fx:id="Staff_id" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="DOB" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="Staff_name" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Label fx:id="salary" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label fx:id="phone_no" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Label fx:id="desg" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Label fx:id="dept" alignment="CENTER" prefHeight="43.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>

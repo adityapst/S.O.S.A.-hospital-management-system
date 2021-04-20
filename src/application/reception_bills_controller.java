@@ -120,11 +120,16 @@ public class reception_bills_controller implements Initializable  {
         	  SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");  
         	  String strDate= formatter.format(date);  
         	l1.setText(String.valueOf(nw));
-        	System.out.println("UPDATE IN_PAT SET BILL NO="+nw+" where REPORT_NO="+l2.getText());
+//        	System.out.println("UPDATE IN_PAT SET BILL NO="+nw+" where REPORT_NO="+l2.getText());
         	st= connection.prepareStatement("UPDATE IN_PAT SET BILL_NO="+nw+" where REPORT_NO="+l2.getText());
         	preparedStatement = connection.prepareStatement(query);
 //        	System.out.println("Line 122");
         	res=st.executeUpdate();
+        	if(res<=0) {
+        		st= connection.prepareStatement("UPDATE OUT_PAT SET BILL_NO="+nw+" where REPORT_NO="+l2.getText());
+        		preparedStatement = connection.prepareStatement(query);
+        		res=st.executeUpdate();
+        	}
 //        	System.out.println("Line 124");
         	st= connection.prepareStatement("UPDATE IN_PAT SET OUT_DATE='"+strDate+"' where REPORT_NO="+l2.getText());
 //        	System.out.println("Line 126");

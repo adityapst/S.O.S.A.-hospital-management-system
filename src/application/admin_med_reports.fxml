@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.admin_report_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.admin_med_rep_controller">
 
    <children>
       <VBox layoutY="-3.0" prefHeight="677.0" prefWidth="118.0" style="-fx-background-color: #172333;">
@@ -68,13 +68,6 @@
                </font>
             </Button>
             <AnchorPane prefHeight="77.0" prefWidth="118.0" />
-
-            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
-
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
       <Pane layoutX="118.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">
@@ -96,8 +89,8 @@
                   <TableColumn fx:id="BP" prefWidth="68.0" text="BP" />
                   <TableColumn fx:id="temp" prefWidth="103.199951171875" text="Temperature" />
                   <TableColumn fx:id="weight" prefWidth="95.2000732421875" text="Weight" />
-                  <TableColumn fx:id="pulse" prefWidth="60.00006103515625" text="Pulse" />
-                  <TableColumn fx:id="patient_id" prefWidth="140.7999267578125" text="Patient_ID" />
+                  <TableColumn fx:id="pulse" prefWidth="59.20001220703125" text="Pulse" />
+                  <TableColumn fx:id="patient_id" prefWidth="142.4000244140625" text="Patient_ID" />
                </columns>
             </TableView>
             <Label alignment="CENTER" layoutX="347.0" layoutY="24.0" prefHeight="26.0" prefWidth="195.0" style="-fx-background-color: #000000;" text="Medical Reports">

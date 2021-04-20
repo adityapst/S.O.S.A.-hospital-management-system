@@ -9,8 +9,8 @@ public class admin_med_rep {
 	String BP;
 	int temp,weight,pulse;
 	
-	public admin_med_rep(int report_no, int staff_id, int patient_id, String dis_diag, String bP, int temp, int weight,
-			int pulse) {
+	public admin_med_rep(int report_no, int staff_id,  String dis_diag, String bP, int temp, int weight,
+			int pulse,int patient_id) {
 		super();
 		this.report_no = report_no;
 		this.staff_id = staff_id;
@@ -20,6 +20,7 @@ public class admin_med_rep {
 		this.temp = temp;
 		this.weight = weight;
 		this.pulse = pulse;
+		
 	}
 
 	public int getReport_no() {

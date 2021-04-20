@@ -54,11 +54,6 @@
                </font>
             </Button>
             <AnchorPane prefHeight="77.0" prefWidth="118.0" />
-            <Button fx:id="settings" alignment="CENTER" mnemonicParsing="false" onAction="#settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Sign Out">
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
       <Pane layoutX="118.0" prefHeight="58.0" prefWidth="890.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">

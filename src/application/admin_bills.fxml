@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1006.0" stylesheets="@../Styling/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.admin_bill_controller">
 
    <children>
@@ -68,13 +67,6 @@
                </font>
             </Button>
             <AnchorPane prefHeight="97.0" prefWidth="118.0" />
-
-            <Button fx:id="Settings" alignment="CENTER" mnemonicParsing="false" onAction="#Settings" prefHeight="51.0" prefWidth="118.0" styleClass="button-left" text="Settings">
-
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
       <Pane layoutX="118.0" prefHeight="58.0" prefWidth="898.0" style="-fx-background-image: #0c39ff;" styleClass="main-bg">
