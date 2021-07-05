@@ -17,9 +17,7 @@ public class SampleForm extends Application
 		{
 			Parent root = FXMLLoader.load(getClass().getResource("SampleForm.fxml"));
 			Scene scene = new Scene(root,1000,716);
-//			primaryStage.initStyle(StageStyle.UNDECORATED);
 			
-//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} 
