@@ -7,6 +7,4 @@ Language Used: Java, HTML, CSS
 Database Used: Oracle 11g
 
 
-
-
 Contributors: Om Agarwal, Aditya Tomar, Samarth Soni and Saransh Dwivedi.
